@@ -11,6 +11,7 @@ import Modal from './components/Modal'
 import MobileMenu from './components/MobileMenu'
 import NewsTickerComponent from './components/NewsTickerComponent'
 import WhatsAppButton from './components/WhatsAppButton'
+import CompactAttentionNotification from './components/CompactAttentionNotification'
 import './App.css'
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
     derivatives: true,
     attention: true
   })
+
+  const [showCompactNotification, setShowCompactNotification] = useState(true)
 
   // Scroll to top functionality
   useEffect(() => {
@@ -49,6 +52,10 @@ function App() {
     }))
   }
 
+  const handleCloseNotification = () => {
+    setShowCompactNotification(false)
+  }
+
   return (
     <>
       <MobileMenu />
@@ -62,23 +69,29 @@ function App() {
         <Compliance />
         {/* <ClientLogin /> */}
         <Contact />
-        
+
         <div id="totop" onClick={scrollToTop} style={{ bottom: '-45px', opacity: '0', transition: 'all 0.5s', position: 'fixed', right: '20px', zIndex: 1000, cursor: 'pointer' }}>
           <img alt="" src="/images/top-arrow.png" />
         </div>
-        
+
         <WhatsAppButton />
       </div>
-      
+
+      {showCompactNotification && (
+        <CompactAttentionNotification
+          onClose={handleCloseNotification}
+        />
+      )}
+
       {modalsState.derivatives && (
-        <Modal 
+        <Modal
           type="derivatives"
           onClose={() => closeModal('derivatives')}
         />
       )}
-      
+
       {modalsState.attention && (
-        <Modal 
+        <Modal
           type="attention"
           onClose={() => closeModal('attention')}
         />

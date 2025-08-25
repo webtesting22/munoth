@@ -9,10 +9,10 @@ const Services = () => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 767)
     }
-    
+
     checkScreenSize()
     window.addEventListener('resize', checkScreenSize)
-    
+
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
@@ -20,11 +20,11 @@ const Services = () => {
     {
       title: "Equity Broking Desk.",
       image: "/images/advise-based-banner.jpg",
-      description: <>We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research. <br /> 
-      {/* <b>Advise Based Broking Desk</b> */}
-      <p>PLEASE Note, we are a registered broker and maintain no WhatsApp groups and have no link with any person who does that. Pls beware of fraud, impersonation and phishing. 
-      </p>
-      {/* <p><b>We also have No apps on playstore or istore for investors</b></p> */}
+      description: <>We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research. <br />
+        {/* <b>Advise Based Broking Desk</b> */}
+        <p>PLEASE Note, we are a registered broker and maintain no WhatsApp groups and have no link with any person who does that. Pls beware of fraud, impersonation and phishing.
+        </p>
+        {/* <p><b>We also have No apps on playstore or istore for investors</b></p> */}
       </>
     },
     {
@@ -73,7 +73,7 @@ const Services = () => {
         <img src="/images/title-icon04.png" alt="" />
         <span>Services</span>
       </div>
-      
+
       <div className="service-block-outer">
         <div className="service-block">
           <div className="width">
@@ -82,20 +82,20 @@ const Services = () => {
                 <ul>
                   {services.map((service, index) => (
                     <li key={index} className={!isMobile && activeTab === index ? 'active' : ''}>
-                      <a 
-                        href="javascript:;" 
+                      <a
+                        href="javascript:;"
                         className="item"
                         onClick={() => handleTabClick(index)}
                       >
                         {service.title}
                         {isMobile && <span className="plus"></span>}
                       </a>
-                      
+
                       {isMobile && (
-                        <div 
-                          className="mob-content" 
-                          style={{ 
-                            display: openMobileTab === index ? 'block' : 'none' 
+                        <div
+                          className="mob-content"
+                          style={{
+                            display: openMobileTab === index ? 'block' : 'none'
                           }}
                         >
                           <img src={service.image} alt="" />
@@ -110,11 +110,11 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-              
+
               {!isMobile && (
                 <div className="tab-content">
                   {services.map((service, index) => (
-                    <div 
+                    <div
                       key={index}
                       className={`content-inner ${activeTab === index ? 'active' : ''}`}
                       style={{ display: activeTab === index ? 'block' : 'none' }}
