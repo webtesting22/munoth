@@ -37,7 +37,7 @@ const Modal = ({ type, onClose }) => {
         <a href="https://www.instagram.com/munoth.capital/" target="_blank" rel="noopener noreferrer">Instagram</a>. 
         We also urge clients to only trust communication with/from your respective Point-Of-Contact in this regard. Anyone dealing with unauthorised entities or disbursing money or acting on such tips without proper verification shall be doing so at their own risk and Munoth Capital Market Ltd shall neither be responsible in any manner, nor can it assist the victims in recovering their lost money. We strongly urge you to be vigilant and conduct thorough due diligence before acting on stock tips shared on such fraudulent groups impersonating Munoth Capital Market Ltd.
 
-        <p style={{marginBottom:"0px",color:"black"}}><b>For any clarification or official communication, email us at info@munoth.com or contact us on our official number 9033003188</b></p>
+        <p style={{marginBottom:"0px",color:"black"}}><b>For any clarification or official communication, email us at <a href="mailto:info@munoth.com">info@munoth.com</a> or contact us on our official number <a href="tel:9033003188">9033003188</a></b></p>
       </>
     ]
   }
