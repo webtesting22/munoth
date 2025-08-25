@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Modal from './components/Modal'
 import MobileMenu from './components/MobileMenu'
 import NewsTickerComponent from './components/NewsTickerComponent'
+import WhatsAppButton from './components/WhatsAppButton'
 import './App.css'
 
 function App() {
@@ -65,6 +66,8 @@ function App() {
         <div id="totop" onClick={scrollToTop} style={{ bottom: '-45px', opacity: '0', transition: 'all 0.5s', position: 'fixed', right: '20px', zIndex: 1000, cursor: 'pointer' }}>
           <img alt="" src="/images/top-arrow.png" />
         </div>
+        
+        <WhatsAppButton />
       </div>
       
       {modalsState.derivatives && (

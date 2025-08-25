@@ -24,9 +24,9 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contactData)
       })
-      
+
       const data = await response.json()
-      
+
       if (data.iserror) {
         setMessages({ success: '', error: data.message })
       } else {
@@ -46,15 +46,15 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <div className="main-title">
+      {/* <div className="main-title">
         <img src="/images/title-icon08.png" alt="" />
         <span>Contact</span>
-      </div>
-      
+      </div> */}
+
       <div id="contact-block">
         <div className="width">
           <h2>Munoth Capital Market Ltd.</h2>
-          
+
           <div className="contact-info cf">
             <div className="block-left">
               <h3>Corporate office & Registered Office</h3>
@@ -65,15 +65,45 @@ const Contact = () => {
                 S G Road, Ahmedabad - 380058
               </p>
               <ul>
-                <li className="number">+91-79-26937954, 9974004651</li>
+                <li className="number"><a href="tel:9033003188">+919033003188</a></li>
                 <li className="email">
                   <a href="mailto:info@munoth.com">info@munoth.com</a> | {' '}
                   <a href="mailto:grievances@munoth.com">grievances@munoth.com</a>
                 </li>
               </ul>
             </div>
-            
-            <div className="block-right">
+            <div className="contact-bottom cf">
+              <div className='FirstContainer'>
+                <div className="block">
+                  <h4>Compliance Officer</h4>
+                  <p>
+                    <b>Siddharth S. Jain</b><br />
+                    Phone: <a href="tel:079-26937954">079-26937954</a><br />
+                    Email: <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
+                  </p>
+                </div>
+                <div className="block">
+                  <h4>Investor Grievance</h4>
+                  <p><a href="mailto:grievances@munoth.com">grievances@munoth.com</a></p>
+                  <p><a href="/documents/escalation-matrix.pdf" target="_blank" rel="noopener noreferrer">Escalation Matrix</a></p>
+                </div>
+              </div>
+              <div className="block block03">
+                <h4>Standard Set of Client Registration Form</h4>
+                <p>
+                  <img src="/images/pdf-blue-icon.png" alt="" />
+                  <a className="download" href="/documents/trading-form.pdf" target="_blank" rel="noopener noreferrer">Download</a>
+                </p>
+              </div>
+              <div className="block last">
+                <h4>Saral Account Opening Form</h4>
+                <p>
+                  <img src="/images/pdf-blue-icon.png" alt="" />
+                  <a className="download" href="/documents/saral-account-form.pdf" target="_blank" rel="noopener noreferrer">Download</a>
+                </p>
+              </div>
+            </div>
+            {/* <div className="block-right">
               <h3>Inquiry</h3>
               
               {loading && (
@@ -143,38 +173,10 @@ const Contact = () => {
                   />
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          <div className="contact-bottom cf">
-            <div className="block">
-              <h4>Compliance Officer</h4>
-              <p>
-                <b>Siddharth S. Jain</b><br />
-                Phone: <a href="tel:079-26937954">079-26937954</a><br />
-                Email: <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
-              </p>
-            </div>
-            <div className="block">
-              <h4>Investor Grievance</h4>
-              <p><a href="mailto:grievances@munoth.com">grievances@munoth.com</a></p>
-              <p><a href="/documents/escalation-matrix.pdf" target="_blank" rel="noopener noreferrer">Escalation Matrix</a></p>
-            </div>
-            <div className="block block03">
-              <h4>Standard Set of Client Registration Form</h4>
-              <p>
-                <img src="/images/pdf-blue-icon.png" alt="" />
-                <a className="download" href="/documents/trading-form.pdf" target="_blank" rel="noopener noreferrer">Download</a>
-              </p>
-            </div>
-            <div className="block last">
-              <h4>Saral Account Opening Form</h4>
-              <p>
-                <img src="/images/pdf-blue-icon.png" alt="" />
-                <a className="download" href="/documents/saral-account-form.pdf" target="_blank" rel="noopener noreferrer">Download</a>
-              </p>
-            </div>
-          </div>
+
 
           <div id="register-block">
             <table>
@@ -214,14 +216,14 @@ const Contact = () => {
           <footer>
             <ul className="cf">
               <li><a href="http://www.bseindia.com/" target="_blank" rel="noopener noreferrer">BSE</a></li>
-              <li><a href="#">Investor Protection</a></li>
+              <li><a href="#">Investor&nbsp;Protection</a></li>
               <li><a href="http://www.nseindia.com/" target="_blank" rel="noopener noreferrer">NSE</a></li>
               <li><a href="http://www.sebi.gov.in" target="_blank" rel="noopener noreferrer">SEBI</a></li>
-              <li><a href="#">Watchout Investors</a></li>
-              <li><a href="#">Investor Complaints</a></li>
+              <li><a href="#">Watchout&nbsp;Investors</a></li>
+              <li><a href="#">Investor&nbsp;Complaints</a></li>
               <li><a href="https://www.scores.gov.in/scores/Welcome.html" target="_blank" rel="noopener noreferrer">SCORES</a></li>
               <li><a href="https://evoting.cdslindia.com/Evoting/EvotingLogin" target="_blank" rel="noopener noreferrer">eVoting</a></li>
-              <li><a href="https://smartodr.in/login" target="_blank" rel="noopener noreferrer">SMART ODR</a></li>
+              <li><a href="https://smartodr.in/login" target="_blank" rel="noopener noreferrer">SMART&nbsp;ODR</a></li>
             </ul>
             <div className="copyright cf">
               <p>&copy; 2022 Munoth Capital Market Ltd. - All Rights Reserved</p>

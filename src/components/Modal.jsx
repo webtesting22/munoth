@@ -25,6 +25,7 @@ const Modal = ({ type, onClose }) => {
     title: "Attention!",
     titleColor: "#ff0000",
     content: [
+
       "Certain unknown miscreants have formed a WhatsApp group misusing our name and infringing on our logo thereby inducing people to invest in stocks, falsely assuring them high profits and then duping them of their money.",
       "We have lodged a Complaint at the Sarkhej Police Station, Ahmedabad (Dated 22-July-2025) in relation to the aforesaid acts and also informed regulatory authorities about the same. We have also requested them to take the strictest possible action against the perpetrators.",
       "Munoth Capital Market Limited is a regulated entity. Neither we, nor any of our partners, directors or employees have created or subscribed to any such fake websites or groups on any third-party apps like WhatsApp, Telegram etc. that deal in stock market information or tips, nor do we endorse any such dubious activities that encourage people to part with their hard-earned money by assuring high returns.",
@@ -35,6 +36,8 @@ const Modal = ({ type, onClose }) => {
         <a href="https://x.com/MunothCapital" target="_blank" rel="noopener noreferrer">X</a>, {' '}
         <a href="https://www.instagram.com/munoth.capital/" target="_blank" rel="noopener noreferrer">Instagram</a>. 
         We also urge clients to only trust communication with/from your respective Point-Of-Contact in this regard. Anyone dealing with unauthorised entities or disbursing money or acting on such tips without proper verification shall be doing so at their own risk and Munoth Capital Market Ltd shall neither be responsible in any manner, nor can it assist the victims in recovering their lost money. We strongly urge you to be vigilant and conduct thorough due diligence before acting on stock tips shared on such fraudulent groups impersonating Munoth Capital Market Ltd.
+
+        <p style={{marginBottom:"0px",color:"black"}}><b>For any clarification or official communication, email us at info@munoth.com or contact us on our official number 9033003188</b></p>
       </>
     ]
   }
@@ -56,7 +59,7 @@ const Modal = ({ type, onClose }) => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h4 style={{ margin: 0, color: currentContent.titleColor || 'inherit' }}>
+              <h4 style={{ margin: 0, color: currentContent.titleColor || 'inherit',fontSize:"30px" }}>
                 {currentContent.title}
               </h4>
               <button 
