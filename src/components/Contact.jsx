@@ -65,7 +65,7 @@ const Contact = () => {
                 S G Road, Ahmedabad - 380058
               </p>
               <ul>
-                <li className="number"><a href="tel:9033003188">+919033003188</a></li>
+                <li className="number"><a href="tel:9033003188">+91 9033003188</a></li>
                 <li className="email">
                   <a href="mailto:info@munoth.com">info@munoth.com</a> | {' '}
                   <a href="mailto:grievances@munoth.com">grievances@munoth.com</a>

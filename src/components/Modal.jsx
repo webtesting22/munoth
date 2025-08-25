@@ -46,16 +46,16 @@ const Modal = ({ type, onClose }) => {
   const modalZIndex = type === 'derivatives' ? 1055 : 1060  // Attention modal should be on top
   
   // Offset the second modal slightly so both are visible
-  const modalStyle = {
-    zIndex: modalZIndex,
-    ...(type === 'attention' && {
-      transform: 'translate(20px, 20px)'
-    })
-  }
+  // const modalStyle = {
+  //   zIndex: modalZIndex,
+  //   ...(type === 'attention' && {
+  //     transform: 'translate(20px, 20px)'
+  //   })
+  // }
 
   return (
     <>
-      <div className="modal show" style={modalStyle}>
+      <div className="modal show">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -184,6 +184,11 @@ const Modal = ({ type, onClose }) => {
         .modal-backdrop.show {
           opacity: 0.5;
         }
+          @media (max-width:780px){
+    .modal-content{
+        margin-top: 300px !important;
+    }
+}
       `}</style>
     </>
   )

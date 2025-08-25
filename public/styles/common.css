@@ -328,10 +328,10 @@ a {
     display: inline-block;
     color: #fff;
     background: #95b5dc;
-    font-size: 35px;
+    font-size: 40px;
     padding: 10px 40px;
     min-width: 183px;
-    
+
 }
 
 h2 {
@@ -777,7 +777,7 @@ h2 {
 
 #download-block .block-inner {
     float: left;
-    margin: 0 2.7% 6%;
+    margin: 0 2.7% 4%;
     border: 1px solid #d0b450;
     width: 27.7%;
     background: #fff;
@@ -1256,9 +1256,9 @@ footer ul li {
     /* margin-left: 24px; */
 }
 
-footer .cf{
-display: flex;
-justify-content: space-between;
+footer .cf {
+    display: flex;
+    justify-content: space-between;
 }
 
 footer ul li:first-child {
@@ -1373,7 +1373,7 @@ ul#news-tricker li::after {
     width: 240px;
 }
 
-.contact-bottom{
+.contact-bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1381,6 +1381,16 @@ ul#news-tricker li::after {
 
 .contact-bottom .block03 {
     width: 195px;
+}
+
+.Social-header {
+    display: flex;
+    gap: 50px;
+    padding: 20px 0px;
+}
+
+.Social-header .social-icons svg {
+    font-size: 30px;
 }
 
 .contact-bottom .block.last {
@@ -1563,7 +1573,11 @@ ul#news-tricker li::after {
     border-bottom-left-radius: calc(.3rem - 1px);
 }
 
-.FirstContainer{
+.FirstContainer {
     display: flex;
     margin-bottom: 40px;
+}
+
+section{
+    border-top: 2px solid rgba(0, 0, 0, 0.07);
 }

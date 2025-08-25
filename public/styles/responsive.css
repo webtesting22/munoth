@@ -925,12 +925,12 @@
 		position: relative;
 		width: 95%;
 		padding: 2.5%;
-		display: none;
+		/* display: none; */
 	}
 
 	#banner .title h2 {
 		font-size: 18px;
-		line-height: 20px;
+		line-height: 35px;
 	}
 
 	#banner .title p {

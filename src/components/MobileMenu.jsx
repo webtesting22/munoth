@@ -122,7 +122,10 @@ const MobileMenu = () => {
         @media screen and (max-width: 767px) {
           .slicknav_menu {
             display: block;
+            margin-top: -30px;
+    padding: 10px 20px;
           }
+            
         }
         
         .slicknav_btn {
