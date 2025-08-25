@@ -1312,6 +1312,7 @@ footer ul li a:hover {
     right: 10px;
     width: 40px;
     z-index: 2;
+    display: none !important;
 }
 
 .news-tricker-outer {
