@@ -1,0 +1,286 @@
+@media only screen and (min-width:1003px) and (max-width:1024px)
+{
+
+	.width {width: 95%;}
+	header .logo{ margin:0;}
+	.portfolio{ padding:20px 25px;}
+	#banner-outer .banner-title{ width:95%; bottom:20px;}
+	.news-tricker-outer{width: 95%;}
+	.tickercontainer .mask{ width:90%;}
+
+}
+@media only screen and (min-width:768px) and (max-width:1002px)
+{
+	.width{ width:95%;}
+	#header .width {width: 100%;}
+	#header ul li{ margin:0 10px;}
+	header .logo{ margin:0;}
+	
+	.small-logo{ display:none;}
+	
+	#banner ul li{ height:auto;}
+	#banner .title{ width:95%;} 
+	
+	#wrapper{ width:100%; position:relative; box-shadow:0 0 10px 10px rgba(0,0,0,.2); z-index:10; background:#fff;  }
+	
+	#banner ul li{ height:auto;}
+	#banner-outer .banner-title{ width:95%; bottom:5px;}
+	#banner-outer .banner-title li{ margin:0 5px;} 
+	
+	#staff{ text-align:center;}	
+	#staff .item{ float:none; display:inline-block; vertical-align:top; margin:0 12px 30px;}
+	
+	.equity-block .equal-width img{ max-width:100%;}
+	.research-catg ul li:first-child,.research-catg ul li{ margin:10px; width:27%; min-height:inherit; }
+	#content{ width:95%; margin:-80px auto 0;}
+	#content .white-arrow{ width:100%;}
+	#profile-block .width{ width:95%;}
+	#mangement .width{ width:95%;}
+	#service .width{ width:95%;}
+	#financial .detail-desc{ margin-left:0;}
+	#download .width{ width:100%;}
+	#download-block .block-inner{ width:41%;}
+	#download-block .block-inner:nth-child(3n){ clear:both;}
+	#contact-block .width{ width:95%;}
+	
+	#totop{ right:15px;}
+	
+	#tabs-outer .tabs ul li .mob-content{ display:none;}
+	
+	#mangement .main-title{ margin-left:0;}
+	
+	.news-tricker-outer{width: 95%;}
+	.tickercontainer .mask{ width:90%;}
+	.contact-bottom .block{ width:26%;}
+	
+	}
+	
+	
+	@media only screen and (max-width:767px)
+	{
+	.width{ width:95%;}
+	header .logo{ margin:0;}
+	#header{ border:none; height:auto; -moz-box-shadow:0 0 8px 2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 0 8px 2px rgba(0, 0, 0, 0.4); box-shadow:0 0 8px 2px rgba(0, 0, 0, 0.4); }
+	.small-logo{ display:none;}
+	
+	#banner{ padding:0;}
+	#banner .logo{ height:150px; width:150px; top:10%;}
+	#banner .logo img{ max-width:100%;}
+	#banner ul li{ height:auto;}
+	#banner .title{  width:100%;}
+	#banner .title h2{ font-size:22px; line-height:26px;}
+	#banner .title p{ font-size:18px; line-height:24px;}
+	#banner .title p br{ display:none;}
+	
+	#main-menu{ display:none;}
+	#wrapper{ width:100%; position:relative; box-shadow:0 0 10px 10px rgba(0,0,0,.2); z-index:10; background:#fff; margin-top:36px;  }
+	
+	
+	#main-menu li ul{ position:relative; opacity:1; top:0; visibility:visible; width:100%; transition:none; box-shadow:none; background:none !important;}
+	#main-menu li:hover ul{ position:relative;opacity:1; top:0; visibility:visible; }
+	#main-menu li ul li{ float:left; width:100%;position:relative; opacity:1; top:0; visibility:visible; width:100%; transition:none; box-shadow:none; left:0; padding:0;}
+	#main-menu li ul li:hover ul{ position:relative;opacity:1; top:0; }
+	#main-menu li ul li, #main-menu li ul li:first-child{ background:none ; border-bottom:none; float:none;}
+	#main-menu li ul li ul{ display:block; }
+	
+	
+	.nav-icon{ display:block; position:absolute; right:12px; top:10px; width:40px; height:30px; text-align:left;}
+	.sub-nav-icon{ display:block; background:url(/images/down-arrow.png) no-repeat center center; width:40px; height:40px; position:absolute; right:0; top:0; position:absolute; cursor:pointer;}	
+	#mobile-menu ul li ul{ display:none;}
+	.nav-icon:hover{ text-decoration:none;}
+	.nav-icon span {position: absolute; top: 45%; right: 0px; left:0; margin:0 auto; display: block; padding: 0; width: 25px; height: 2px; background-color: #0C4DA2; font-size: 0px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none;  -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-transition: background-color 0.3s; transition: background-color 0.3s;}
+	.nav-icon span:before, .nav-icon span:after {position: absolute; left: 0px; width: 100%; height: 100%; background: #0C4DA2; content: ''; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s;}
+	.nav-icon span:after { -webkit-transform: translateY(400%); transform: translateY(400%);}
+	.nav-icon span:before {-webkit-transform: translateY(-400%); transform: translateY(-400%);}
+	.nav-icon.active span{-webkit-background: none; 	-moz-background: none; 	-ms-background: none; 	-o-background: none;	background: none;}
+	.nav-icon.active span:before{-webkit-transform: translateY(0) rotate(45deg); transform: translateY(0) rotate(45deg); }
+	.nav-icon.active span:after{-webkit-transform: translateY(0) rotate(-45deg); transform: translateY(0) rotate(-45deg);}
+	
+	.special-list li{ margin:0 10px 20px;}
+	#home-bottom .info{ width:95%;}
+	.portfolio{ padding:20px 25px;}
+	.portfolio .slide{ width:120px !important;} 
+	footer #top{ padding:0 0 10px; text-align:center;}
+	footer #top ul{ float:none; text-align:center;}
+	footer #top ul:after{ display:none;}
+	footer #top ul li,footer #top ul.main-links li{ display:inline-block; margin:0 10px; float:none; }
+	footer #top ul.main-links{ padding-bottom:10px;}
+	
+	footer #bottom{ padding:0; text-align:center;}
+	footer #bottom p{ float:none; display:inline-block;}
+	footer #bottom span{ float:none; display:inline-block; margin:0 0 0 20px;}
+	#home-bottom .info li{ margin:0 0 1px; width:100%; height:auto;} 
+	#home-bottom .info li a br{ display:none; }
+	
+	#banner-outer .banner-title{ width:95%; bottom:0; position:inherit; margin:10px auto;}
+	#banner-outer .banner-title li{ margin:0 1% 2% 0; display:inline-block; width:48%; vertical-align:top;}  
+	#banner-outer .banner-title li a{ width:100%; padding:10px 0; border-radius:0; height:auto;}
+	
+	.equity-block h2 br{ display:none;}
+	.equity-block .equal-width{ width:100%; float:none;}
+	.equity-block .equal-width:first-child{ margin:0;}
+	.equity-block .equity-img{ display:none;}
+	
+	.research-catg ul{ text-align:center;}
+	.research-catg ul li{ margin:0 1% 2%; float:none; display:inline-block; vertical-align:top; width:27%;}
+	.research-catg ul li:first-child{ margin:0 1% 2%;}
+	
+	.about-block{ height:auto; margin-bottom:0; background-size:100% auto; width:100%;}
+	#content{ width:95%; top:auto; margin:-80px auto 0; position:relative;}
+	
+	#content .white-arrow{ width:100%;}
+	#content-inner .list{ float:none; width:100%; margin:0;}
+	#content-inner .list:first-child{ margin:0; }
+	
+	#profile-block{ padding:50px 0;}
+	#profile-block .width{ width:95%;}
+	#profile-block .block-inner{ margin:0;}
+	#profiles .item .answer{ padding:30px 0;}
+	#profiles .item .answer img{ width:150px;} 
+	#profiles .item .answer .info{ margin-left:170px;} 
+	#profiles .item .answer .info-full{ margin-left:0;} 
+	
+	#staff{ text-align:center;}
+	#staff .item{ float:none; display:inline-block; vertical-align:top;} 
+	
+	
+	#service .width{ width:95%;}
+	#tabs-outer .tabs{ width:100%;}
+	#tabs-outer .tabs ul li a{ font-size:16px; position:relative;}
+	#tabs-outer .tab-content{ display:none;}
+	
+	#mangement .width{ width:95%;} 
+	
+	#financial{}
+	#financial h2{ margin:0;}
+	#financial .detail-desc{ width:100%; margin:0;}
+	
+	#download .width{ width:95%;}
+	#download-block .block-inner{ width:40%;}
+	#download-block .block-inner:nth-child(3n){ clear:both;}
+	#download-block .block-inner img{ max-width:100%; margin:0 auto; float:none;}
+	#download-block .block-inner .info{ margin:0;}
+	
+	#contact-block .width{ width:95%;}
+	.contact-info .block-left{ width:100%; float:none;}
+	.contact-info p br{ display:none;}
+	.contact-info .block-right{ width:100%; float:none;}
+	.block-right form .input-text,.block-right form .input-textarea{ width:95%; padding:2.5%;}
+	
+	.slicknav_menu {display:block;position:fixed; left:0; right:0; z-index:99;}
+	.js #menu {display:none;}
+	.js .slicknav_menu {display:block;}
+	
+	
+	#service .service-block-outer{ background-size:100% auto; background-position:center bottom; background-color:#274f80;}
+	
+	#tabs-outer .tabs ul{ margin:0;}
+	#tabs-outer .tabs ul li .mob-content{ background-color:#fff; padding:12px;}
+	#tabs-outer .tabs ul li .mob-content img{ float:left; max-width:35%; }
+	#tabs-outer .tabs ul li .mob-content .details{ margin-left:38%;}
+	#tabs-outer .tabs ul li .mob-content .details h2{ margin:0; font-size:18px;}
+	#tabs-outer .tabs ul li .mob-content .details p{ margin:10px 0;}
+	#tabs-outer .tabs ul li a.item span.plus{background:url(/images/plus-icon.png) no-repeat 0 0; color:#cfb53b; cursor:pointer; display:block; height:11px; position:absolute; right:15px; top:15px; width:11px;}
+	#tabs-outer .tabs ul li.active a.item span.plus{ background:url(/images/minus-icon.png) no-repeat 0 0;}
+	
+	#client-login .main-title{ margin-left:0;}
+	.about-banner{ height:280px;}
+	
+	#totop{ display:none;}
+	
+	.news-tricker-outer{width: 95%;}
+	.tickercontainer .mask{ width:90%;}
+	
+}
+
+@media only screen and (max-width:640px) {
+	#profile-block{ background:#274f80;}
+	#profiles .item .answer{ text-align:center;}
+	#profiles .item .answer img{ float:none; margin:0 auto 20px;}
+	#profiles .item .answer .info{ margin:0; text-align:left;}
+	
+	#tabs-outer .tabs ul li.active .mob-content{ display:block;}
+	
+	#download-block{ background:none;}
+	#download-block .block-inner{ width:95%; padding:2%; margin:0 auto 20px; float:none; }
+	#download-block .block-inner .info{ width:90%;}
+	.download-icon{ width:10%;}
+
+	#mangement .main-title{ margin:0;}
+	
+	footer ul{ text-align:center;}
+	footer ul li:first-child,footer ul li{ float:none; margin:0 12px 12px; display:inline-block;}
+	
+	#contact-block{ background-image:none;}
+	
+	.copyright{ text-align:center;}
+	.copyright p{ float:none;}
+	.copyright span{ float:none; display:inline-block; margin:20px 0 0 0;}
+	
+	.contact-bottom .block{ width:48%; margin-bottom:20px;}
+	.contact-bottom .block.last{ width:48%; }
+	.contact-bottom .block:nth-child(3){ clear:both;}
+}
+
+@media only screen and (min-width:320px) and (max-width:480px){
+	header h1 {float: none;margin: 0px; display:inline-block; vertical-align:top; }
+	.header-top{ text-align:center;}
+	header .logo{ margin:0 auto;}
+	.header-right{ display:block; float:none; margin:10px 0;}
+	a.live-chat{ float:none; margin:0;}
+	
+	#content .white-arrow{ display:none;}
+	
+	#home-bottom .info li a{ font-size:14px; padding:20px 10px;}
+	.portfolio .bx-wrapper .bx-controls-direction a.bx-prev{ left:-30px;}
+	.portfolio .bx-wrapper .bx-controls-direction a.bx-next{ right:-30px;}
+	.portfolio .slide{ width:100px !important;} 
+	
+	.special-list{ padding:0;}
+	#home-bottom{ margin:0 auto 50px;}
+	.special-list li{ width:95%; margin:0 0 2%;}
+	.special-list li a span.image-outer{ width:100%; height:auto;}
+	.special-list li a:hover img{ transition:none; transform:none;}
+	.special-list li a img{ width:100%;}
+	
+	.special-list li a span{ height:auto;}
+	#home-middle h1{ font-size:20px; }
+	#home-middle h1 br{ display:none;}
+	
+	#banner .logo{ top:3%;}
+	#banner-outer .banner-title li{ margin:0 0 2% 0; display:block; width:100%; vertical-align:top;}  
+	#banner .title{ position:relative; width:95%; padding:2.5%; display:none;}
+	#banner .title h2{font-size: 18px; line-height: 20px;}
+	#banner .title p {font-size: 14px;line-height: 20px;}
+	
+	.research-catg ul li,.research-catg ul li:first-child{ float:none; margin:0 0 2%;}
+	.research-catg ul li{ width:95%; padding:2.5%; height:auto;}
+
+	#tabs-outer .tabs ul li .mob-content img{ float:none; max-width:100%; display:block; margin:0 auto 20px;}
+	#tabs-outer .tabs ul li .mob-content .details{ margin:0;}
+
+	#financial{ background:none; padding:0 0 50px;}
+		
+	.block-left ul li{ font-size:90%;}
+	.block-left ul li a{ font-size:100%;}
+	
+	#download-block .block-inner .info{ width:80%;}
+	.download-icon{ width:20%;}
+	
+	#client-login .login-box{ height:402px;}
+	#client-block{ background:url(/images/client-login-small-bg.png) no-repeat center top;  width:300px; margin:0 auto;}
+	#client-login .login-box form{ width:182px; padding:250px 0 0;}
+	#client-login form .input-text{ width:162px;}
+	#client-login form p{ margin:30px auto 0;}
+	#signin_error{ top:225px;}
+	#create-account{ width:235px;}
+	#client-login .signup-form .input-text{ width:215px;}
+	.signup .error{ width:235px;}
+	#create-account .login-txt{ font-size:14px;}
+	
+	#client-login .main-title{ margin-left:0;}
+	
+	.contact-bottom .block{ width:100%; margin-bottom:20px;}
+	.contact-bottom .block.last{ width:100%; }
+}
+
