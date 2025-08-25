@@ -18,9 +18,14 @@ const Services = () => {
 
   const services = [
     {
-      title: "Advise Based Broking Desk",
+      title: "Equity Broking Desk.",
       image: "/images/advise-based-banner.jpg",
-      description: "We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research."
+      description: <>We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research. <br /> 
+      {/* <b>Advise Based Broking Desk</b> */}
+      <p>PLEASE Note, we are a registered broker and maintain no WhatsApp groups and have no link with any person who does that. Pls beware of fraud, impersonation and phishing. 
+      </p>
+      {/* <p><b>We also have No apps on playstore or istore for investors</b></p> */}
+      </>
     },
     {
       title: "Depository",

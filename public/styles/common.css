@@ -1578,6 +1578,21 @@ ul#news-tricker li::after {
     margin-bottom: 40px;
 }
 
-section{
+section {
     border-top: 2px solid rgba(0, 0, 0, 0.07);
+}
+
+@media (max-width:780px) {
+    footer .cf {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .contact-bottom {
+        margin-top: 20px !important;
+    }
+
+    .FirstContainer {
+        margin-bottom: 20px !important;
+    }
 }
