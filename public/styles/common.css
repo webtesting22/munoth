@@ -1514,11 +1514,11 @@ ul#news-tricker li::after {
 
 .modal.show {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .modal-dialog {
-    max-width: 500px;
+    max-width: 800px;
     margin: 1.75rem auto;
     position: relative;
     width: auto;

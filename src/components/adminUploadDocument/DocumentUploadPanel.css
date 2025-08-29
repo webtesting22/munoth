@@ -1,0 +1,185 @@
+.document-upload-panel {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.panel-header {
+  margin-bottom: 24px;
+  text-align: center;
+  background: white;
+  padding: 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header .ant-typography h2 {
+  margin-bottom: 8px;
+  color: #1f1f1f;
+}
+
+.upload-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.upload-card .ant-card-body {
+  padding: 32px;
+}
+
+.upload-form .ant-form-item-label > label {
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.category-info {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  margin: 16px 0;
+}
+
+.category-info .ant-card-body {
+  padding: 12px 16px;
+}
+
+.upload-form .ant-select,
+.upload-form .ant-input,
+.upload-form .ant-picker {
+  border-radius: 6px;
+}
+
+.upload-form .ant-select:hover,
+.upload-form .ant-input:hover,
+.upload-form .ant-picker:hover {
+  border-color: #cfb53b;
+}
+
+.upload-form .ant-select-focused,
+.upload-form .ant-input:focus,
+.upload-form .ant-picker-focused {
+  border-color: #cfb53b;
+  box-shadow: 0 0 0 2px rgba(207, 181, 59, 0.2);
+}
+
+.upload-form .ant-btn-primary {
+  background: linear-gradient(135deg, #cfb53b 0%, #b8a532 100%);
+  border-color: #cfb53b;
+  border-radius: 6px;
+  height: 40px;
+  font-weight: 600;
+}
+
+.upload-form .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #b8a532 0%, #a6932b 100%);
+  border-color: #b8a532;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(207, 181, 59, 0.3);
+}
+
+.upload-form .ant-btn {
+  border-radius: 6px;
+  height: 40px;
+  font-weight: 500;
+}
+
+.upload-form .ant-upload {
+  width: 100%;
+}
+
+.upload-form .ant-upload .ant-btn {
+  width: 100%;
+  height: 48px;
+  border: 2px dashed #d9d9d9;
+  background: #fafafa;
+  color: #666;
+}
+
+.upload-form .ant-upload .ant-btn:hover {
+  border-color: #cfb53b;
+  color: #cfb53b;
+}
+
+.upload-form .ant-upload-list {
+  margin-top: 12px;
+}
+
+.upload-form .ant-upload-list-item {
+  padding: 8px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.upload-form .ant-upload-list-item-name {
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+.upload-form .ant-divider {
+  margin: 24px 0;
+  border-color: #e9ecef;
+}
+
+/* Form validation styles */
+.upload-form .ant-form-item-has-error .ant-select-selector,
+.upload-form .ant-form-item-has-error .ant-input,
+.upload-form .ant-form-item-has-error .ant-picker {
+  border-color: #ff4d4f;
+}
+
+.upload-form .ant-form-item-has-error .ant-select-selector:hover,
+.upload-form .ant-form-item-has-error .ant-input:hover,
+.upload-form .ant-form-item-has-error .ant-picker:hover {
+  border-color: #ff7875;
+}
+
+/* Success message styling */
+.ant-message-success .ant-message-notice-content {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .document-upload-panel {
+    padding: 16px;
+  }
+  
+  .panel-header {
+    padding: 24px 16px;
+  }
+  
+  .upload-card .ant-card-body {
+    padding: 24px 16px;
+  }
+  
+  .upload-form .ant-col {
+    margin-bottom: 0;
+  }
+  
+  .upload-form .ant-form-item {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .panel-header .ant-typography h2 {
+    font-size: 20px;
+  }
+  
+  .upload-form .ant-btn {
+    height: 36px;
+  }
+  
+  .upload-form .ant-btn-primary {
+    height: 36px;
+  }
+  
+  .upload-form .ant-select,
+  .upload-form .ant-input,
+  .upload-form .ant-picker {
+    height: 36px;
+  }
+}

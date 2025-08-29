@@ -1,19 +1,19 @@
 .compact-attention-notification {
-     position: fixed !important;
-     bottom: 80px !important;
-     right: 20px !important;
-     width: 320px;
-     max-width: calc(100vw - 40px);
-     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-     border: 1px solid #cfb53b;
-     border-radius: 12px;
-     box-shadow: 0 8px 32px rgba(207, 181, 59, 0.3);
-     z-index: 999 !important;
-     overflow: hidden;
-     animation: slideInRight 0.5s ease-out;
-     backdrop-filter: blur(10px);
-     transition: all 0.4s ease;
-     max-height: 600px;
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 20px !important;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #cfb53b;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(207, 181, 59, 0.3);
+    z-index: 999 !important;
+    overflow: hidden;
+    animation: slideInRight 0.5s ease-out;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    max-height: 600px;
 }
 
 /* Removed expanded class styles - always expanded now */
@@ -127,15 +127,15 @@
 }
 
 @keyframes slideInRight {
-     from {
-         transform: translateX(100%);
-         opacity: 0;
-     }
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 
-     to {
-         transform: translateX(0);
-         opacity: 1;
-     }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes pulse {
@@ -157,12 +157,12 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-     .compact-attention-notification {
-         bottom: 15px !important;
-         right: 15px !important;
-         width: 280px;
-         max-width: calc(100vw - 30px);
-     }
+    .compact-attention-notification {
+        bottom: 15px !important;
+        right: 15px !important;
+        width: 280px;
+        max-width: calc(100vw - 30px);
+    }
 
     .notification-title {
         font-size: 14px;
@@ -176,14 +176,14 @@
 }
 
 @media (max-width: 480px) {
-     .compact-attention-notification {
-         top: 80px !important;
-         right: 10px !important;
-         width: 100%;
-         max-width: calc(100vw - 20px);
-         max-height: 100% !important;
-         bottom: unset !important;
-     }
+    .compact-attention-notification {
+        top: 80px !important;
+        right: 10px !important;
+        width: 100%;
+        max-width: calc(100vw - 20px);
+        max-height: 100% !important;
+        bottom: unset !important;
+    }
 
     .notification-header {
         padding: 10px 12px 6px 12px;
