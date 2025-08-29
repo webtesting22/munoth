@@ -435,7 +435,7 @@ const DocumentUploadPanel = () => {
         apiResponse: apiResponse
       };
 
-            // Add to documents list
+      // Add to documents list
       setDocuments(prev => [finalDocument, ...prev]);
 
       console.log('🎉 ===== DOCUMENT SAVED SUCCESSFULLY =====');
@@ -461,511 +461,267 @@ const DocumentUploadPanel = () => {
     }
 
     console.log('🏁 ===== DOCUMENT SAVE PROCESS COMPLETED =====');
-    };
+  };
 
-    const resetForm = () => {
-      form.resetFields();
-      setSelectedCategory(null);
-      setSelectedSubCategory(null);
-      setFileList([]);
-      setUploadError('');
-      setUploadSuccess(false);
-      setUploadedFileUrl('');
-      setUploadResponse(null);
-      setS3Fields(null);
-      message.info('Form reset successfully');
-    };
+  const resetForm = () => {
+    form.resetFields();
+    setSelectedCategory(null);
+    setSelectedSubCategory(null);
+    setFileList([]);
+    setUploadError('');
+    setUploadSuccess(false);
+    setUploadedFileUrl('');
+    setUploadResponse(null);
+    setS3Fields(null);
+    message.info('Form reset successfully');
+  };
 
-    // CRUD Operations
-    const handleEdit = (record) => {
-      setEditingDocument(record);
-      editForm.setFieldsValue({
-        category: record.category,
-        subCategory: record.subCategory,
-        documentName: record.documentName,
-        documentDate: record.documentDate ? moment(record.documentDate) : null,
-        additionalField: record.additionalField
-      });
-      setEditFileList([{
-        uid: '-1',
-        name: record.fileName,
-        status: 'done',
-        url: '#'
-      }]);
-      setIsEditModalVisible(true);
-    };
+  // CRUD Operations
+  const handleEdit = (record) => {
+    setEditingDocument(record);
+    editForm.setFieldsValue({
+      category: record.category,
+      subCategory: record.subCategory,
+      documentName: record.documentName,
+      documentDate: record.documentDate ? moment(record.documentDate) : null,
+      additionalField: record.additionalField
+    });
+    setEditFileList([{
+      uid: '-1',
+      name: record.fileName,
+      status: 'done',
+      url: '#'
+    }]);
+    setIsEditModalVisible(true);
+  };
 
-    const handleEditSubmit = async (values) => {
-      try {
-        const updatedDocument = {
-          ...editingDocument,
-          category: values.category,
-          subCategory: values.subCategory,
-          documentName: values.documentName,
-          documentDate: values.documentDate?.format('YYYY-MM-DD'),
-          additionalField: values.additionalField,
-          fileName: editFileList[0]?.name || editingDocument.fileName,
-          fileSize: editFileList[0]?.size || editingDocument.fileSize,
-          lastModified: new Date().toISOString().split('T')[0]
-        };
+  const handleEditSubmit = async (values) => {
+    try {
+      const updatedDocument = {
+        ...editingDocument,
+        category: values.category,
+        subCategory: values.subCategory,
+        documentName: values.documentName,
+        documentDate: values.documentDate?.format('YYYY-MM-DD'),
+        additionalField: values.additionalField,
+        fileName: editFileList[0]?.name || editingDocument.fileName,
+        fileSize: editFileList[0]?.size || editingDocument.fileSize,
+        lastModified: new Date().toISOString().split('T')[0]
+      };
 
-        setDocuments(prev =>
-          prev.map(doc => doc.id === editingDocument.id ? updatedDocument : doc)
-        );
+      setDocuments(prev =>
+        prev.map(doc => doc.id === editingDocument.id ? updatedDocument : doc)
+      );
 
-        message.success('Document updated successfully!');
-        setIsEditModalVisible(false);
-        setEditingDocument(null);
-        editForm.resetFields();
-        setEditFileList([]);
+      message.success('Document updated successfully!');
+      setIsEditModalVisible(false);
+      setEditingDocument(null);
+      editForm.resetFields();
+      setEditFileList([]);
 
-      } catch (error) {
-        console.error('Update error:', error);
-        message.error('Failed to update document');
-      }
-    };
+    } catch (error) {
+      console.error('Update error:', error);
+      message.error('Failed to update document');
+    }
+  };
 
-    const handleDelete = (record) => {
-      setDocuments(prev => prev.filter(doc => doc.id !== record.id));
-      message.success('Document deleted successfully!');
-    };
+  const handleDelete = (record) => {
+    setDocuments(prev => prev.filter(doc => doc.id !== record.id));
+    message.success('Document deleted successfully!');
+  };
 
-    const handleView = (record) => {
-      Modal.info({
-        title: 'Document Details',
-        width: 600,
-        content: (
-          <div>
-            <p><strong>Category:</strong> {record.category}</p>
-            <p><strong>Sub Category:</strong> {record.subCategory}</p>
-            <p><strong>Document Name:</strong> {record.documentName}</p>
-            <p><strong>Document Date:</strong> {record.documentDate}</p>
-            {record.additionalField && <p><strong>Additional Info:</strong> {record.additionalField}</p>}
-            <p><strong>File Name:</strong> {record.fileName}</p>
-            <p><strong>File Size:</strong> {formatFileSize(record.fileSize)}</p>
-            <p><strong>Upload Date:</strong> {record.uploadDate}</p>
-            <p><strong>Status:</strong> <Tag color="green">{record.status}</Tag></p>
-            {record.fileUrl && (
-              <p>
-                <strong>File URL:</strong>
-                <a href={record.fileUrl} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-                  View File
-                </a>
-              </p>
-            )}
-          </div>
-        )
-      });
-    };
-
-    const formatFileSize = (bytes) => {
-      if (bytes === 0) return '0 Bytes';
-      const k = 1024;
-      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-    };
-
-    const currentInfo = getCurrentCategoryInfo();
-
-    // Table columns
-    const columns = [
-      {
-        title: 'Document Name',
-        dataIndex: 'documentName',
-        key: 'documentName',
-        width: 200,
-        ellipsis: true,
-        render: (text, record) => (
-          <div>
-            <div style={{ fontWeight: 500 }}>{text}</div>
-            <div style={{ fontSize: '12px', color: '#666' }}>
-              <FileOutlined /> {record.fileName}
-            </div>
-          </div>
-        )
-      },
-      {
-        title: 'Category',
-        dataIndex: 'category',
-        key: 'category',
-        width: 100,
-        render: (category) => (
-          <Tag color={category === 'Financial' ? 'blue' : 'green'}>
-            {category}
-          </Tag>
-        )
-      },
-      {
-        title: 'Sub Category',
-        dataIndex: 'subCategory',
-        key: 'subCategory',
-        width: 150,
-        ellipsis: true
-      },
-      {
-        title: 'Document Date',
-        dataIndex: 'documentDate',
-        key: 'documentDate',
-        width: 120,
-        sorter: (a, b) => new Date(a.documentDate) - new Date(b.documentDate)
-      },
-      {
-        title: 'File Size',
-        dataIndex: 'fileSize',
-        key: 'fileSize',
-        width: 100,
-        render: (size) => formatFileSize(size)
-      },
-      {
-        title: 'Status',
-        dataIndex: 'status',
-        key: 'status',
-        width: 80,
-        render: (status) => (
-          <Badge
-            status={status === 'Active' ? 'success' : 'default'}
-            text={status}
-          />
-        )
-      },
-      {
-        title: 'Actions',
-        key: 'actions',
-        width: 150,
-        render: (_, record) => (
-          <Space size="small">
-            <Tooltip title="View Details">
-              <Button
-                type="text"
-                icon={<EyeOutlined />}
-                onClick={() => handleView(record)}
-              />
-            </Tooltip>
-            <Tooltip title="Edit Document">
-              <Button
-                type="text"
-                icon={<EditOutlined />}
-                onClick={() => handleEdit(record)}
-              />
-            </Tooltip>
-            <Tooltip title="Download">
-              <Button
-                type="text"
-                icon={<DownloadOutlined />}
-                onClick={() => {
-                  if (record.fileUrl) {
-                    window.open(record.fileUrl, '_blank');
-                  } else {
-                    message.info('File URL not available');
-                  }
-                }}
-              />
-            </Tooltip>
-            <Popconfirm
-              title="Are you sure you want to delete this document?"
-              onConfirm={() => handleDelete(record)}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Tooltip title="Delete Document">
-                <Button
-                  type="text"
-                  danger
-                  icon={<DeleteOutlined />}
-                />
-              </Tooltip>
-            </Popconfirm>
-          </Space>
-        )
-      }
-    ];
-
-    return (
-      <div className="document-upload-panel">
-        <div className="panel-header">
-          <Title level={2}>
-            <FolderOpenOutlined style={{ marginRight: 8, color: '#cfb53b' }} />
-            Munoth Document Management Panel
-          </Title>
-          <Text type="secondary">
-            Upload, manage, and organize Financial and Compliance documents
-          </Text>
+  const handleView = (record) => {
+    Modal.info({
+      title: 'Document Details',
+      width: 600,
+      content: (
+        <div>
+          <p><strong>Category:</strong> {record.category}</p>
+          <p><strong>Sub Category:</strong> {record.subCategory}</p>
+          <p><strong>Document Name:</strong> {record.documentName}</p>
+          <p><strong>Document Date:</strong> {record.documentDate}</p>
+          {record.additionalField && <p><strong>Additional Info:</strong> {record.additionalField}</p>}
+          <p><strong>File Name:</strong> {record.fileName}</p>
+          <p><strong>File Size:</strong> {formatFileSize(record.fileSize)}</p>
+          <p><strong>Upload Date:</strong> {record.uploadDate}</p>
+          <p><strong>Status:</strong> <Tag color="green">{record.status}</Tag></p>
+          {record.fileUrl && (
+            <p>
+              <strong>File URL:</strong>
+              <a href={record.fileUrl} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+                View File
+              </a>
+            </p>
+          )}
         </div>
+      )
+    });
+  };
 
-        {/* Tab Navigation */}
-        <Card className="tab-navigation">
-          <Space size="large">
+  const formatFileSize = (bytes) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  };
+
+  const currentInfo = getCurrentCategoryInfo();
+
+  // Table columns
+  const columns = [
+    {
+      title: 'Document Name',
+      dataIndex: 'documentName',
+      key: 'documentName',
+      width: 200,
+      ellipsis: true,
+      render: (text, record) => (
+        <div>
+          <div style={{ fontWeight: 500 }}>{text}</div>
+          <div style={{ fontSize: '12px', color: '#666' }}>
+            <FileOutlined /> {record.fileName}
+          </div>
+        </div>
+      )
+    },
+    {
+      title: 'Category',
+      dataIndex: 'category',
+      key: 'category',
+      width: 100,
+      render: (category) => (
+        <Tag color={category === 'Financial' ? 'blue' : 'green'}>
+          {category}
+        </Tag>
+      )
+    },
+    {
+      title: 'Sub Category',
+      dataIndex: 'subCategory',
+      key: 'subCategory',
+      width: 150,
+      ellipsis: true
+    },
+    {
+      title: 'Document Date',
+      dataIndex: 'documentDate',
+      key: 'documentDate',
+      width: 120,
+      sorter: (a, b) => new Date(a.documentDate) - new Date(b.documentDate)
+    },
+    {
+      title: 'File Size',
+      dataIndex: 'fileSize',
+      key: 'fileSize',
+      width: 100,
+      render: (size) => formatFileSize(size)
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      width: 80,
+      render: (status) => (
+        <Badge
+          status={status === 'Active' ? 'success' : 'default'}
+          text={status}
+        />
+      )
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      width: 150,
+      render: (_, record) => (
+        <Space size="small">
+          <Tooltip title="View Details">
             <Button
-              type={activeTab === 'upload' ? 'primary' : 'default'}
-              icon={<PlusOutlined />}
-              size="large"
-              onClick={() => setActiveTab('upload')}
-            >
-              Upload New Document
-            </Button>
+              type="text"
+              icon={<EyeOutlined />}
+              onClick={() => handleView(record)}
+            />
+          </Tooltip>
+          <Tooltip title="Edit Document">
             <Button
-              type={activeTab === 'manage' ? 'primary' : 'default'}
-              icon={<FileTextOutlined />}
-              size="large"
-              onClick={() => setActiveTab('manage')}
-            >
-              Manage Documents ({documents.length})
-            </Button>
-          </Space>
-        </Card>
-
-        {activeTab === 'upload' && (
-          <Card className="upload-card">
-            <Form
-              form={form}
-              layout="vertical"
-              onFinish={handleSubmit}
-              className="upload-form"
-            >
-              <Row gutter={24}>
-                <Col span={12}>
-                  <Form.Item
-                    label="Document Category"
-                    name="category"
-                    rules={[{ required: true, message: 'Please select a category' }]}
-                  >
-                    <Select
-                      placeholder="Select document category"
-                      onChange={handleCategoryChange}
-                      size="large"
-                    >
-                      {Object.keys(documentCategories).map(category => (
-                        <Option key={category} value={category}>
-                          {category}
-                        </Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
-                </Col>
-
-                <Col span={12}>
-                  <Form.Item
-                    label="Sub Category"
-                    name="subCategory"
-                    rules={[{ required: true, message: 'Please select a sub category' }]}
-                  >
-                    <Select
-                      placeholder="Select sub category"
-                      onChange={handleSubCategoryChange}
-                      disabled={!selectedCategory}
-                      size="large"
-                    >
-                      {getSubCategories().map(subCat => (
-                        <Option key={subCat.value} value={subCat.value}>
-                          {subCat.label}
-                        </Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
-                </Col>
-              </Row>
-
-              {currentInfo && (
-                <Card size="small" className="category-info">
-                  <Text type="secondary">{currentInfo.description}</Text>
-                </Card>
-              )}
-
-              <Divider />
-
-              <Row gutter={24}>
-                <Col span={12}>
-                  <Form.Item
-                    label="Document Name"
-                    name="documentName"
-                    rules={[{ required: true, message: 'Please enter document name' }]}
-                  >
-                    <Input
-                      placeholder="Enter document name"
-                      prefix={<FileTextOutlined />}
-                      size="large"
-                    />
-                  </Form.Item>
-                </Col>
-
-                <Col span={12}>
-                  <Form.Item
-                    label="Document Date"
-                    name="documentDate"
-                    rules={[{ required: true, message: 'Please select document date' }]}
-                  >
-                    <DatePicker
-                      placeholder="Select document date"
-                      style={{ width: '100%' }}
-                      size="large"
-                      suffixIcon={<CalendarOutlined />}
-                    />
-                  </Form.Item>
-                </Col>
-              </Row>
-
-              {currentInfo && currentInfo.fields.length > 3 && (
-                <Row gutter={24}>
-                  <Col span={12}>
-                    <Form.Item
-                      label={currentInfo.fields[3]}
-                      name="additionalField"
-                      rules={[{ required: false }]}
-                    >
-                      <Input
-                        placeholder={`Enter ${currentInfo.fields[3].toLowerCase()}`}
-                        size="large"
-                      />
-                    </Form.Item>
-                  </Col>
-                </Row>
-              )}
-
-              <Form.Item
-                label="Document File"
-                name="documentFile"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please upload a document file',
-                    validator: (_, value) => {
-                      if (fileList.length > 0 && uploadedFileUrl) {
-                        return Promise.resolve();
-                      }
-                      return Promise.reject(new Error('Please upload a document file'));
-                    }
-                  }
-                ]}
-              >
-                <Upload
-                  fileList={fileList}
-                  onChange={handleFileChange}
-                  beforeUpload={() => false}
-                  accept=".pdf,.doc,.docx,.xls,.xlsx"
-                  maxCount={1}
-                >
-                  <Button
-                    icon={<UploadOutlined />}
-                    size="large"
-                    loading={isUploading}
-                    disabled={isUploading}
-                  >
-                    {isUploading ? 'Uploading...' : 'Choose Document File (Auto-Upload)'}
-                  </Button>
-                </Upload>
-
-                {/* Upload Status Messages */}
-                {uploadError && (
-                  <div style={{ color: '#ff4d4f', marginTop: 8, fontSize: '12px' }}>
-                    {uploadError}
-                  </div>
-                )}
-                {uploadSuccess && (
-                  <div style={{ color: '#52c41a', marginTop: 8, fontSize: '12px' }}>
-                    ✓ File uploaded successfully
-                  </div>
-                )}
-              </Form.Item>
-
-              <Divider />
-
-              <Space size="large">
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  icon={<SaveOutlined />}
-                  size="large"
-                  disabled={!selectedCategory || !selectedSubCategory || isUploading || !uploadedFileUrl}
-                >
-                  Save Document
-                </Button>
-
-                <Button
-                  icon={<ReloadOutlined />}
-                  size="large"
-                  onClick={resetForm}
-                >
-                  Reset Form
-                </Button>
-
-                {/* Debug Button - Remove this in production */}
-                <Button
-                  type="dashed"
-                  size="large"
-                  onClick={async () => {
-                    console.log('🧪 Testing API call...');
-                    try {
-                      const testFile = new File(['test content'], 'test.pdf', { type: 'application/pdf' });
-                      await uploadDocumentToS3(testFile);
-                    } catch (error) {
-                      console.error('🧪 Test API call failed:', error);
-                    }
-                  }}
-                >
-                  Test API
-                </Button>
-              </Space>
-            </Form>
-          </Card>
-        )}
-
-        {/* Document Management Table */}
-        {activeTab === 'manage' && (
-          <Card className="manage-card">
-            <div style={{ marginBottom: 16 }}>
-              <Title level={4}>Document Management</Title>
-              <Text type="secondary">
-                View, edit, and delete uploaded documents
-              </Text>
-            </div>
-
-            {documents.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                <FileTextOutlined style={{ fontSize: 48, color: '#d9d9d9', marginBottom: 16 }} />
-                <div style={{ fontSize: 16, color: '#666', marginBottom: 8 }}>
-                  No documents uploaded yet
-                </div>
-                <Text type="secondary">
-                  Click "Upload New Document" to add your first document
-                </Text>
-              </div>
-            ) : (
-              <Table
-                columns={columns}
-                dataSource={documents}
-                rowKey="id"
-                pagination={{
-                  pageSize: 10,
-                  showSizeChanger: true,
-                  showQuickJumper: true,
-                  showTotal: (total, range) =>
-                    `${range[0]}-${range[1]} of ${total} documents`
-                }}
-                scroll={{ x: 1000 }}
-                size="middle"
+              type="text"
+              icon={<EditOutlined />}
+              onClick={() => handleEdit(record)}
+            />
+          </Tooltip>
+          <Tooltip title="Download">
+            <Button
+              type="text"
+              icon={<DownloadOutlined />}
+              onClick={() => {
+                if (record.fileUrl) {
+                  window.open(record.fileUrl, '_blank');
+                } else {
+                  message.info('File URL not available');
+                }
+              }}
+            />
+          </Tooltip>
+          <Popconfirm
+            title="Are you sure you want to delete this document?"
+            onConfirm={() => handleDelete(record)}
+            okText="Yes"
+            cancelText="No"
+          >
+            <Tooltip title="Delete Document">
+              <Button
+                type="text"
+                danger
+                icon={<DeleteOutlined />}
               />
-            )}
-          </Card>
-        )}
+            </Tooltip>
+          </Popconfirm>
+        </Space>
+      )
+    }
+  ];
 
-        {/* Edit Modal */}
-        <Modal
-          title="Edit Document"
-          open={isEditModalVisible}
-          onCancel={() => {
-            setIsEditModalVisible(false);
-            setEditingDocument(null);
-            editForm.resetFields();
-            setEditFileList([]);
-          }}
-          footer={null}
-          width={800}
-        >
+  return (
+    <div className="document-upload-panel">
+      <div className="panel-header">
+        <Title level={2}>
+          <FolderOpenOutlined style={{ marginRight: 8, color: '#cfb53b' }} />
+          Munoth Document Management Panel
+        </Title>
+        <Text type="secondary">
+          Upload, manage, and organize Financial and Compliance documents
+        </Text>
+      </div>
+
+      {/* Tab Navigation */}
+      <Card className="tab-navigation">
+        <Space size="large">
+          <Button
+            type={activeTab === 'upload' ? 'primary' : 'default'}
+            icon={<PlusOutlined />}
+            size="large"
+            onClick={() => setActiveTab('upload')}
+          >
+            Upload New Document
+          </Button>
+          <Button
+            type={activeTab === 'manage' ? 'primary' : 'default'}
+            icon={<FileTextOutlined />}
+            size="large"
+            onClick={() => setActiveTab('manage')}
+          >
+            Manage Documents ({documents.length})
+          </Button>
+        </Space>
+      </Card>
+
+      {activeTab === 'upload' && (
+        <Card className="upload-card">
           <Form
-            form={editForm}
+            form={form}
             layout="vertical"
-            onFinish={handleEditSubmit}
+            onFinish={handleSubmit}
+            className="upload-form"
           >
             <Row gutter={24}>
               <Col span={12}>
@@ -976,6 +732,7 @@ const DocumentUploadPanel = () => {
                 >
                   <Select
                     placeholder="Select document category"
+                    onChange={handleCategoryChange}
                     size="large"
                   >
                     {Object.keys(documentCategories).map(category => (
@@ -995,6 +752,8 @@ const DocumentUploadPanel = () => {
                 >
                   <Select
                     placeholder="Select sub category"
+                    onChange={handleSubCategoryChange}
+                    disabled={!selectedCategory}
                     size="large"
                   >
                     {getSubCategories().map(subCat => (
@@ -1006,6 +765,14 @@ const DocumentUploadPanel = () => {
                 </Form.Item>
               </Col>
             </Row>
+
+            {currentInfo && (
+              <Card size="small" className="category-info">
+                <Text type="secondary">{currentInfo.description}</Text>
+              </Card>
+            )}
+
+            <Divider />
 
             <Row gutter={24}>
               <Col span={12}>
@@ -1038,37 +805,270 @@ const DocumentUploadPanel = () => {
               </Col>
             </Row>
 
+            {currentInfo && currentInfo.fields.length > 3 && (
+              <Row gutter={24}>
+                <Col span={12}>
+                  <Form.Item
+                    label={currentInfo.fields[3]}
+                    name="additionalField"
+                    rules={[{ required: false }]}
+                  >
+                    <Input
+                      placeholder={`Enter ${currentInfo.fields[3].toLowerCase()}`}
+                      size="large"
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+            )}
+
             <Form.Item
               label="Document File"
               name="documentFile"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please upload a document file',
+                  validator: (_, value) => {
+                    if (fileList.length > 0 && uploadedFileUrl) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(new Error('Please upload a document file'));
+                  }
+                }
+              ]}
             >
               <Upload
-                fileList={editFileList}
-                onChange={({ fileList: newFileList }) => setEditFileList(newFileList)}
+                fileList={fileList}
+                onChange={handleFileChange}
                 beforeUpload={() => false}
                 accept=".pdf,.doc,.docx,.xls,.xlsx"
                 maxCount={1}
               >
-                <Button icon={<UploadOutlined />} size="large">
-                  Choose New File (Optional)
+                <Button
+                  icon={<UploadOutlined />}
+                  size="large"
+                  loading={isUploading}
+                  disabled={isUploading}
+                >
+                  {isUploading ? 'Uploading...' : 'Choose Document File (Auto-Upload)'}
                 </Button>
               </Upload>
+
+              {/* Upload Status Messages */}
+              {uploadError && (
+                <div style={{ color: '#ff4d4f', marginTop: 8, fontSize: '12px' }}>
+                  {uploadError}
+                </div>
+              )}
+              {uploadSuccess && (
+                <div style={{ color: '#52c41a', marginTop: 8, fontSize: '12px' }}>
+                  ✓ File uploaded successfully
+                </div>
+              )}
             </Form.Item>
 
-            <div style={{ textAlign: 'right', marginTop: 24 }}>
-              <Space>
-                <Button onClick={() => setIsEditModalVisible(false)}>
-                  Cancel
-                </Button>
-                <Button type="primary" htmlType="submit" icon={<SaveOutlined />}>
-                  Update Document
-                </Button>
-              </Space>
-            </div>
-          </Form>
-        </Modal>
-      </div>
-    );
-  };
+            <Divider />
 
-  export default DocumentUploadPanel;
+            <Space size="large">
+              <Button
+                type="primary"
+                htmlType="submit"
+                icon={<SaveOutlined />}
+                size="large"
+                disabled={!selectedCategory || !selectedSubCategory || isUploading || !uploadedFileUrl}
+              >
+                Save Document
+              </Button>
+
+              <Button
+                icon={<ReloadOutlined />}
+                size="large"
+                onClick={resetForm}
+              >
+                Reset Form
+              </Button>
+
+              {/* Debug Button - Remove this in production */}
+              <Button
+                type="dashed"
+                size="large"
+                onClick={async () => {
+                  console.log('🧪 Testing API call...');
+                  try {
+                    const testFile = new File(['test content'], 'test.pdf', { type: 'application/pdf' });
+                    await uploadDocumentToS3(testFile);
+                  } catch (error) {
+                    console.error('🧪 Test API call failed:', error);
+                  }
+                }}
+              >
+                Test API
+              </Button>
+            </Space>
+          </Form>
+        </Card>
+      )}
+
+      {/* Document Management Table */}
+      {activeTab === 'manage' && (
+        <Card className="manage-card">
+          <div style={{ marginBottom: 16 }}>
+            <Title level={4}>Document Management</Title>
+            <Text type="secondary">
+              View, edit, and delete uploaded documents
+            </Text>
+          </div>
+
+          {documents.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '40px 0' }}>
+              <FileTextOutlined style={{ fontSize: 48, color: '#d9d9d9', marginBottom: 16 }} />
+              <div style={{ fontSize: 16, color: '#666', marginBottom: 8 }}>
+                No documents uploaded yet
+              </div>
+              <Text type="secondary">
+                Click "Upload New Document" to add your first document
+              </Text>
+            </div>
+          ) : (
+            <Table
+              columns={columns}
+              dataSource={documents}
+              rowKey="id"
+              pagination={{
+                pageSize: 10,
+                showSizeChanger: true,
+                showQuickJumper: true,
+                showTotal: (total, range) =>
+                  `${range[0]}-${range[1]} of ${total} documents`
+              }}
+              scroll={{ x: 1000 }}
+              size="middle"
+            />
+          )}
+        </Card>
+      )}
+
+      {/* Edit Modal */}
+      <Modal
+        title="Edit Document"
+        open={isEditModalVisible}
+        onCancel={() => {
+          setIsEditModalVisible(false);
+          setEditingDocument(null);
+          editForm.resetFields();
+          setEditFileList([]);
+        }}
+        footer={null}
+        width={800}
+      >
+        <Form
+          form={editForm}
+          layout="vertical"
+          onFinish={handleEditSubmit}
+        >
+          <Row gutter={24}>
+            <Col span={12}>
+              <Form.Item
+                label="Document Category"
+                name="category"
+                rules={[{ required: true, message: 'Please select a category' }]}
+              >
+                <Select
+                  placeholder="Select document category"
+                  size="large"
+                >
+                  {Object.keys(documentCategories).map(category => (
+                    <Option key={category} value={category}>
+                      {category}
+                    </Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+
+            <Col span={12}>
+              <Form.Item
+                label="Sub Category"
+                name="subCategory"
+                rules={[{ required: true, message: 'Please select a sub category' }]}
+              >
+                <Select
+                  placeholder="Select sub category"
+                  size="large"
+                >
+                  {getSubCategories().map(subCat => (
+                    <Option key={subCat.value} value={subCat.value}>
+                      {subCat.label}
+                    </Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row gutter={24}>
+            <Col span={12}>
+              <Form.Item
+                label="Document Name"
+                name="documentName"
+                rules={[{ required: true, message: 'Please enter document name' }]}
+              >
+                <Input
+                  placeholder="Enter document name"
+                  prefix={<FileTextOutlined />}
+                  size="large"
+                />
+              </Form.Item>
+            </Col>
+
+            <Col span={12}>
+              <Form.Item
+                label="Document Date"
+                name="documentDate"
+                rules={[{ required: true, message: 'Please select document date' }]}
+              >
+                <DatePicker
+                  placeholder="Select document date"
+                  style={{ width: '100%' }}
+                  size="large"
+                  suffixIcon={<CalendarOutlined />}
+                />
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Form.Item
+            label="Document File"
+            name="documentFile"
+          >
+            <Upload
+              fileList={editFileList}
+              onChange={({ fileList: newFileList }) => setEditFileList(newFileList)}
+              beforeUpload={() => false}
+              accept=".pdf,.doc,.docx,.xls,.xlsx"
+              maxCount={1}
+            >
+              <Button icon={<UploadOutlined />} size="large">
+                Choose New File (Optional)
+              </Button>
+            </Upload>
+          </Form.Item>
+
+          <div style={{ textAlign: 'right', marginTop: 24 }}>
+            <Space>
+              <Button onClick={() => setIsEditModalVisible(false)}>
+                Cancel
+              </Button>
+              <Button type="primary" htmlType="submit" icon={<SaveOutlined />}>
+                Update Document
+              </Button>
+            </Space>
+          </div>
+        </Form>
+      </Modal>
+    </div>
+  );
+};
+
+export default DocumentUploadPanel;

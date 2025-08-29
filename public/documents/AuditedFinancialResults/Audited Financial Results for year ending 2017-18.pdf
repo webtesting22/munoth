@@ -1,0 +1,1537 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Corporate Announcement
+</title>
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+  <script src="include/js/jquery-1.9.0.js" type="text/javascript"></script>
+
+      <link href="include/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/jquery-1.12.4.js" type="text/javascript"></script>
+    <link href="include/css/class.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/CalendarControl.js" type="text/javascript"></script>
+
+
+
+     <link href="include/class/CalendarControl.css" rel="stylesheet" type="text/css" /><link href="include/css/CorporateAnn.css" rel="stylesheet" type="text/css" />  
+        <script src="include/js/jquery.min.js" type="text/javascript"></script>
+      <script src="include/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="include/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="include/js/bootbox.min.js"></script>
+
+<script type="text/javascript">
+
+        function showModalNew() {
+            $("#divGSTDisclaimerNew").modal('show');
+        }
+
+       /* $(document).ready(function () {
+            $("#ctl00_NoteMarque").hide();
+            $("#ctl00_note6").hide();
+            $("#ctl00_note7").hide();
+
+        });*/
+
+
+        function RedirectNew() {
+            window.location = "GST.aspx";
+        }
+
+        $(document).ready(function () {
+
+            if($('#ctl00_chkTermsNew').is(":checked"))
+            {
+                $("#ctl00_OTPDetails").show();
+                $("#ctl00_DivSubmitNew").show();
+            }
+            
+
+             $('#ctl00_chkTermsNew').click(function () {
+                if ($('#ctl00_chkTermsNew').is(":checked")) {
+                    //$("#divGSTDisclaimer").modal('hide');
+                    $("#ctl00_OTPDetails").show();
+                    $("#ctl00_DivSubmitNew").show();
+                    $("#ctl00_DivPAN").show();
+                    if ($('#ctl00_ddlContactDetails :selected').text() == "") {
+
+                        $("#divGSTDisclaimerNew").modal('hide');
+                        
+                        bootbox.alert('Your Contact Details are not Registered under Company Registration.Please Submit the same', function () {
+                            window.location.href = "RegistrationForCA.aspx";
+                            $("#divGSTDisclaimerNew").modal('hide');
+                        });
+
+
+                    }
+
+                }
+                else {
+                    $("#ctl00_OTPDetails").hide();
+                    $("#ctl00_DivSubmitNew").hide();
+                    $("#ctl00_DivPAN").hide();
+                }
+
+            });
+        });
+
+
+        function ShowOTPScreenNew() {
+
+            $('#ctl00_btnShowPopupNew').click();
+            
+            RefreshforMobileOTPContentNew();
+            return false;
+        }
+
+        function RefreshforMobileOTPContentNew() {
+            $('#divMobileResendOTPNew').html('180');
+            var interval = setInterval(function () {
+                var timer = $('#divMobileResendOTPNew').html();
+                var seconds = parseInt(timer);
+                --seconds;
+                if (seconds == 0) { clearInterval(interval); $("#ctl00_lnkResendOTPMobileNew").show(); $('#divMobileResendOTPNew').hide(); $('#divDisplayOTPMobileNew').hide(); }
+                $('#divMobileResendOTPNew').html(seconds);
+            }, 1000);
+        }
+
+        function ValidatePANMaster() {
+            if (document.getElementById('ctl00_txtPAN').value != "") {
+                var panVal = document.getElementById('ctl00_txtPAN').value
+                var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+
+                if (regpan.test(panVal) != true) {
+                    $('#ctl00_lblError').text('Invalid PAN No.')
+                    return false;
+                    
+                }
+                else {
+                    $('#Error').hide();
+                    $('#ctl00_lblError').text('');
+                }
+            }
+           
+            
+                
+           
+            else {
+     
+                $('#ctl00_lblError').text('Enter PAN No.');
+                document.getElementById('ctl00_txtPAN').focus();
+                return false;
+            }
+
+            
+        }
+    </script>
+
+  
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //code (prevent page to open on an iframe)
+            if (self != top) {
+                top.location = self.location;
+
+            }
+        });
+    </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111443732-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111443732-1');
+</script>
+
+
+
+</head>
+<body>
+    <form method="post" action="./CorpAnns.aspx" id="form1" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzAyOTg4MjQ5D2QWAmYPZBYCAgMPFgIeB2VuY3R5cGUFE211bHRpcGFydC9mb3JtLWRhdGEWBAIBD2QWAmYPZBYMAgEPDxYCHgRUZXh0BQY1MTEyMDBkZAIDDw8WAh8BBRpNVU5PVEggQ0FQSVRBTCBNQVJLRVQgTFRELmRkAgUPDxYCHwEFDElORTkxMEcwMTAyN2RkAgcPDxYCHwEFBDI0MjdkZAIRDxYCHgdWaXNpYmxlaGQCFw8PFgIeC05hdmlnYXRlVXJsBRdoZWxwZGVzay5hc3B4P2lkPTUxMTIwMGRkAgMPZBYCZg9kFgQCBw8WAh8CaGQCCQ9kFhoCAQ8PFgIfAQUGNTExMjAwZGQCAg8PFgIfAQUaTVVOT1RIIENBUElUQUwgTUFSS0VUIExURC5kZAIDDxAPFgYeDkRhdGFWYWx1ZUZpZWxkBQlGbGRfQ2F0SUQeDURhdGFUZXh0RmllbGQFF0ZsZF9UeXBlT2ZBbm5vdW5jZW1lbnRzHgtfIURhdGFCb3VuZGdkEBUKBlNlbGVjdA1Cb2FyZCBNZWV0aW5nEENvcnBvcmF0ZSBBY3Rpb24LQ29tcGxpYW5jZXMnQW5ub3VuY2VtZW50IHVuZGVyIFJlZ3VsYXRpb24gMzAgKExPRFIpB1Jlc3VsdHMjU2hhcmVob2xkZXIgTWVldGluZyAvIFBvc3RhbCBCYWxsb3QuQ29ycG9yYXRlIEluc29sdmVuY3kgUmVzb2x1dGlvbiBQcm9jZXNzIChDSVJQKRlDbG9zdXJlIG9mIFRyYWRpbmcgV2luZG93GE91dGNvbWUgb2YgQm9hcmQgTWVldGluZxUKBlNlbGVjdAExATIBOAE0ATYBNwE5AjEwAjExFCsDCmdnZ2dnZ2dnZ2cWAQIFZAIEDxBkEBUBEUZpbmFuY2lhbF9SZXN1bHRzFQERRmluYW5jaWFsX1Jlc3VsdHMUKwMBZxYBZmQCBQ8QZBAVAQdPdXRjb21lFQEHT3V0Y29tZRQrAwFnFgFmZAIGD2QWAmYPZBYGAgEPEGRkFgECAWQCAw8QZGQWAQIDZAIJDxAPFgYfBAUFUVRSSUQfBQUHUVRSTkFNRR8GZ2QQFTQGU2VsZWN0DlNlcHRlbWJlciAyMDE4CUp1bmUgMjAxOApNYXJjaCAyMDE4DURlY2VtYmVyIDIwMTcOU2VwdGVtYmVyIDIwMTcJSnVuZSAyMDE3Ck1hcmNoIDIwMTcNRGVjZW1iZXIgMjAxNg5TZXB0ZW1iZXIgMjAxNglKdW5lIDIwMTYKTWFyY2ggMjAxNg1EZWNlbWJlciAyMDE1DlNlcHRlbWJlciAyMDE1CUp1bmUgMjAxNQpNYXJjaCAyMDE1DURlY2VtYmVyIDIwMTQOU2VwdGVtYmVyIDIwMTQJSnVuZSAyMDE0Ck1hcmNoIDIwMTQNRGVjZW1iZXIgMjAxMw5TZXB0ZW1iZXIgMjAxMwlKdW5lIDIwMTMKTWFyY2ggMjAxMw1EZWNlbWJlciAyMDEyDlNlcHRlbWJlciAyMDEyCUp1bmUgMjAxMgpNYXJjaCAyMDEyDURlY2VtYmVyIDIwMTEOU2VwdGVtYmVyIDIwMTEJSnVuZSAyMDExCk1hcmNoIDIwMTENRGVjZW1iZXIgMjAxMA5TZXB0ZW1iZXIgMjAxMAlKdW5lIDIwMTAKTWFyY2ggMjAxMA1EZWNlbWJlciAyMDA5DlNlcHRlbWJlciAyMDA5CUp1bmUgMjAwOQpNYXJjaCAyMDA5DURlY2VtYmVyIDIwMDgOU2VwdGVtYmVyIDIwMDgJSnVuZSAyMDA4Ck1hcmNoIDIwMDgNRGVjZW1iZXIgMjAwNw5TZXB0ZW1iZXIgMjAwNwlKdW5lIDIwMDcKTWFyY2ggMjAwNw1EZWNlbWJlciAyMDA2DlNlcHRlbWJlciAyMDA2CUp1bmUgMjAwNgNPZGQVNAZTZWxlY3QCOTkCOTgCOTcCOTYCOTUCOTQCOTMCOTICOTECOTACODkCODgCODcCODYCODUCODQCODMCODICODECODACNzkCNzgCNzcCNzYCNzUCNzQCNzMCNzICNzECNzACNjkCNjgCNjcCNjYCNjUCNjQCNjMCNjICNjECNjACNTkCNTgCNTcCNTYCNTUCNTQCNTMCNTICNTECNTABMBQrAzRnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGQCBw8QDxYCHwJoZGQWAGQCCA8PFgIfAmdkZAIJDw8WBB4IUmVhZE9ubHlnHwEFLEF1ZGl0ZWQgRmluYW5jaWFsIFJlc3VsdHMgZm9yIE1hcmNoIDMxLCAyMDE4ZGQCCg8PFgIeB0VuYWJsZWRoZGQCCw8PFgIfAQUqPGltZyBzcmM9Jy4uL2luY2x1ZGUvaW1hZ2VzL2Rvd25sb2FkLmdpZic+ZGQCDA8PFgIfAQUoNzBhN2Y0ZTctYzI4OC00ZGI0LWEwNjktYjUwMzMzM2U3ZWEzLnBkZmRkAg4PZBYCZg9kFgICAQ8PFgIfCGhkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WHgUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfVHlwZXNvZlJlc3VsdF9RVFJfQQUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfVHlwZXNvZlJlc3VsdF9RVFJfQQUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfVHlwZXNvZlJlc3VsdF9RVFJfVQUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfVHlwZXNvZlJlc3VsdF9RVFJfVQUrY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJzdG10b2Zhc3NldFllcwUqY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJzdG10b2Zhc3NldE5vBSpjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYnN0bXRvZmFzc2V0Tm8FLWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrX0Zvcm1fU3RkX0ZPUk1fQQUtY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfRm9ybV9TdGRfRk9STV9CBS1jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGNoa19Gb3JtX1N0ZF9GT1JNX0IFLWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrX0Zvcm1fQ29uX0ZPUk1fQQUtY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfRm9ybV9Db25fRk9STV9BBS1jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGNoa19Gb3JtX0Nvbl9GT1JNX0IFLWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrX0Zvcm1fQ29uX0ZPUk1fQgU0Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfRm9ybV9TVERfQXVkaXRvclJlVmlldwUwY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtfRm9ybV9TVERfTGltUmVWaWV3BTBjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGNoa19Gb3JtX1NURF9MaW1SZVZpZXcFMGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRiR2l2ZW5Bc3BlckluZEFTX1lFUwUvY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJHaXZlbkFzcGVySW5kQVNfTk8FL2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRiR2l2ZW5Bc3BlckluZEFTX05PBS1jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYkdpdmVuVGJsUmVjb19ZRVMFLGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRiR2l2ZW5UYmxSZWNvX05PBSxjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYkdpdmVuVGJsUmVjb19OTwUyY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtSZXN1bHRQcmVzc1JlbGVhc2VZRVMFMWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrUmVzdWx0UHJlc3NSZWxlYXNlTk8FMWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrUmVzdWx0UHJlc3NSZWxlYXNlTk8FMmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY2hrUmVzdWx0UHJlc2VudGF0aW9uWUVTBTJjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGNoa1Jlc3VsdFByZXNlbnRhdGlvbllFUwUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjaGtSZXN1bHRQcmVzZW50YXRpb25OTwURY3RsMDAkY2hrVGVybXNOZXcFE2N0bDAwJE11bHRpVmlld01lbnUPD2RmZGL9e1xJU8ufbm9eKNHxL6FDIhjTYCCVa93RFSsEirLj" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="033A243B" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAHGjm1Tur2y+JZAA3LK3cQEvUankFR0rGmtxkchbrVlbnoFBZYDVNXrnB/9WmjDFKj6CauN4FAYHql++NY9pE6SwU8MoYRM51JXnFFjPwc+Y4lggMoRiZTt5SErgmmYRW7+ied8PoazCv4OcXrGjipFKBhxci0yCBrwmlWcLuXphKCX427P0d3LMQ83LwlhpUzpHu8iskSVq0ymhQ2/8D/J90z1M5i+5IiJqEGhJuNV+ws9dWReXOe4EKFNLjBkVpLk+tc7LUpQIL5VO6dkGHWxJgLD21dM5T7+Vdlua9c9u6eTjSbX5sVeC0N29N9bT6YPJfSIaVZ0Wh1P0ky5suVJ3Zi7N0mEIdIRwm7A0ma/W13gPNR1Ep0cfs4yDpcHWtem5Z5nMjZjni3nDYSHThaRcYG942anUMHU+VLbVqO3M3Mp1LRZQpR+pTjWfcXzFjrKcTdkyt7w/nkE33E2w9PYZXi78stECdUhEE+fpngI8IGd5+k/MthfwJNrFRmCML1LLwsKNcujKrYt0VOtAeGrmFPz7qY2SZokji2T7Wg0kFm1cp6WjPVG386lCP3ZGrp3/K1RtKJFIbF6jT7oX/ICGRig1H7LZfyUmXWd49z/aHyUKE28V8uDufiWdbLQ/yaWucrs2vj2GHZ1EaQx8NCYx+ZAAKW1nwsDZnUy6MTQAAFYUFxdYMcrAtJYLPxec+gshyp/ATyjQw+Z5g/35QJBy7951XXnVP/DlhnF2vxUGcPylmyCyPg6u3Bip+9P6ybJ3C3cyut7W7Drb/e8fVoUYnYOtalrvJgzF0ZPVlIuKFZGJuisFo+Tit28pRQJGpp65ul6p7U1eNiwNne/nUrD9Y6zz0iXyi9QZXpSMwDa48rkK5TOzF5eYjz0Jz5P1YeiBI6vU/OMdwoq4UXs1oruJkAjvVjEYQPIboSc3d7zAfh6N2uAJGxwYep8LWPHs8rPAQGNgYn279RuNcK/c5XeiH6qZXm0+638+7eGhqbzXsUnVBpBsw0Hwco9dTK3BTjOcm9Vv6Y4tMA+YzD1zCh9p0/uGJOnsMxHbFusssCTC5lEzvtWiVVJBnlAypMyHsGlIqdD+GsGv9Ywhw+M00tORwdELrXpVJaCP2z8xi7jQnbWB09aQyhlqj6f2WUtZnZ1ZP73ohIGB9f7FYVjQr8xjeohIfq4dpr3iF/jx5Qz9uJQWI7HKg17+B70La158ccCr8gAPldOuRH47R1UUsc4HxJJmFLec5mvlzkALaqF+Bs5QOV5tKqIVU4k6df/WhdXIV2HcC2LAZ134Bk1bvgoIxlBUkh5+o5EWgsI/GNGFTHGn2/Wxn1cOCaEThFiN8yF5R8CT7eYYAAnBbZyufnZo//Xu+SJLLqwp6QpeMwaSscNyKgVFozlXmmtPuWB2pZd0cpjDaUdAqsEJVBlU71B+3Ymlex614a4f8JZi3MzEQSqB0yg7SlSEWFkMZaQEadzJX4+OqFDZ2ob8sbPMKOsTrfxJJW7WGeu+itdq0FKtER9+FxNrffrW5Fk8n/KRLLrB/x/Lujs9aEDSgjE5LWA97j7GJN2EEcD9poE6r3uw9RbUuUNHKZHXPQBDcURiZ7RTZO2VeFpF3x9s70tfkIxCAYLnq/cc9rmFfs4+r5HQXl6NGNiZJVbBfqEdQEBvB/mgmAXQ5t8Zx2Y6broyZgOnEjFNzg+WakMKrrYQTWYqfTl1z70HpOmiX1UsGGF9DiuUS0hf+foc05bCY173m7eF8YKS6lIZ8MQU4k0qgrj5vOPL+sK4cbmIXpJv80m/eT3ujKvViRnon4T5VjzFsXVfm2vYuN7KeTxP7gqb7AZQ42ZjKZMt7hWIMFAa7mzjQydPCSTUJ0O4wQaZgX5kxKuCN72DmPLvjmNRuIPvQi5LyMpWvup0aeFF1N6ggHLBz9GfRQ+twhKWH9qVsMjDMMJUC5SYhZh8TQYrZ1Rewx4PlyRWR2VRPz9TC2+WIL7DqLKhSSR+rF5VimzsXTcx326VgaTkXKAqoKFRUSHsZKo/Dwt6sqqNzYxR59W5wOZ56hTFZzIWR9/ZyqDVxwPr7quWhUGkRBl4qHZpRpw5pIT6GnCxET5N2OnOlEX/q1bJVRb7fRSwQZVllwMkwuSY74tRPKrXiAc1hQexUJe7W+CAQELHXkm05OlUbrCMhWZoLIqCLc1N+DXYwvAm0c36xvdtlPiZyzqIljDN70eFQs8zx5VcdJEeolVjILwGp7R0//E/joxvcAaT1xk5O+4DvMWSe8lFIoPfL6LynLJPYNKh2+p1l//0aoSG6cJmc0ynddezZlLGABxgJRlEUdlb7XsVKMfwRD5aC6xnsybTdPMn3B5ZA7VAasbc55t+ZUZ4xmowvvPe4CtFrYUv94uMLXQTp953Mlxb0OOP3rx2x1xZfSLVJrp3i6UtJjZxojfDKkvk6KGgxEqKSu0sq1qrfKhi" />
+</div>
+        <table width="999" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table width="999" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td valign="top">
+                                <img src="include/images/trans.gif" width="10" height="10" hspace="0" vspace="0" border="0" /></td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                            
+                                <table width="999" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="center" valign="top">
+                                            <img src="include/images/top01_in.gif" hspace="0" vspace="0" border="0" /></td>
+                                    </tr>
+                                    </table>
+                                    </td>
+                                    </tr>
+                                    
+                                     
+                                    <tr>
+                                        <td valign="top">
+                                         
+                                            <table width="979" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td bgcolor="#295358" height="30">
+                                                        <table width="979" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td width="10" bgcolor="295358"></td>
+                                                                <td width="26" class="link_text1"><a href="index.aspx" class="link_text1"></a></td>
+                                                                <td width="683" bgcolor="295358">
+                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td width="31%" class="footer_text1"><strong>Scrip Code :</strong><span id="lblScripcode">511200</span></td>
+                                                                            <td width="31%" class="footer_text1"><strong>Scrip Name :</strong><span id="lblScripName">MUNOTH CAPITAL MARKET LTD.</span></td>
+                                                                            <td width="38%" align="left" class="footer_text1"><strong>ISIN :</strong><span id="lblIsin">INE910G01027</span></td>
+                                                                        </tr>
+
+                                                                    </table>
+                                                                </td>
+                                                                <td width="250" align="right"><span class="footer_text1">Welcome 
+                        <span id="lblUser">2427</span>
+                                                                    | 
+                        <a id="lnkLogOut" class="body_text5" href="javascript:__doPostBack(&#39;ctl00$lnkLogOut&#39;,&#39;&#39;)">Logout</a></span></td>
+                                                                <td width="10" bgcolor="295358"></td>
+                                                            </tr>
+
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="30" bgcolor="#4B868F" class="footer_text1"><a href="Compliance_Signed.aspx" class="link_text1">Compliance Module</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="Issue_Create.aspx" class="link_text1">Listing Module</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="changepassword.aspx" class="link_text1">Change Password</a>
+                                                        &nbsp;&nbsp;|<span id="divCafs"><a href="Corpanns.aspx" id="acafs" class="link_text1">&nbsp;&nbsp;Corporate Announcement</a><font style="font-size: 12.5px" color="#FF0000"><sup>New</sup></font>&nbsp;&nbsp;|</span><a href="alf_bills.aspx" class="link_text1">&nbsp;&nbsp;Listing Fee Bills</a><sup><img src="include/images/new3.gif" /></sup>&nbsp;&nbsp;
+	     |&nbsp;&nbsp;<a href="GetQuote/index.aspx" class="link_text1" target="_blank"> Market Intelligence</a>
+                                                        &nbsp;&nbsp;|&nbsp;&nbsp; 
+                
+                                                        |&nbsp;&nbsp;<a
+                                                            href="circulars.aspx" class="link_text1" style="color: #ffff00;">Circulars</a><font style="font-size: 12.5px" color="#FF0000"><sup>New</sup></font><font style="font-size: 12.5px" color="#FF0000"></font>&nbsp;&nbsp;
+         |&nbsp;&nbsp;<a href="InvComplaints.aspx" class="link_text1">Investor Complaints</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="xbrl.aspx" class="link_text1">XBRL</a>&nbsp;&nbsp;|&nbsp;&nbsp;    
+                                                    
+                                                             <a href="http://listing.bseindia.com/download/Initial Letter_Listing.pdf" class="link_text1" target="_blank" style="color: #ffff00;">GST Preparedness</a><font style="font-size: 12px" color="#FF0000"><sup></sup></font>&nbsp;&nbsp|&nbsp;&nbsp<a href="SustainabilityOfficer_Details.aspx" class="link_text1" target="_blank">Sustainability Officer Details</a><font style="font-size: 12.5px" color="#FF0000"></font>&nbsp;&nbsp|&nbsp;&nbsp;<a id="LinkButton1" class="link_text1" href="javascript:__doPostBack(&#39;ctl00$LinkButton1&#39;,&#39;&#39;)">CGS Tool</a><font style="font-size: 12px" color="#FF0000"><sup></sup></font>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;  <a href="RegistrationForCA.aspx" class="link_text1" >Company Registration</a><font style="font-size: 12px" color="#FF0000"><sup><img src="include/images/new3.gif" /></sup></font>
+                                                 &nbsp;&nbsp;  |&nbsp;&nbsp;&nbsp;&nbsp;| 
+	
+<a href="gst.aspx" id="A111" class="link_text1">GST<sup><img src="include/images/new3.gif" /></sup></a>&nbsp;&nbsp;|&nbsp;&nbsp;| <a href="aboutConvHall.aspx" class="link_text1">BSE’s International Convention Hall</a><font style="font-size: 12.5px" color="#FF0000"><sup><img src="include/images/new3.gif"></sup></font>&nbsp;&nbsp;|<a class="link_text1" href="FullPaid.aspx">Paid Up Capital Tab</a><font color="#FF0000" style="font-size: 12.5px"> </font>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="LegasisPostData.aspx" class="link_text1">Legasis</a><sup><img src="include/images/new3.gif"></sup></td>
+                                                    
+                                                      
+                                                            <caption>
+                                                                
+                                                                <caption>
+                                                                    |
+                                                                </caption>
+                                                    </caption>
+                                               
+                                                   
+                                                </tr>
+
+                                               
+                                  
+                                    <tr>
+
+                                        <td height="30" bgcolor="#4B868F" class="footer_text1">
+                                            <table width="200" border="0" cellpadding="0" cellspacing="0" align="right">
+                                                <tr>
+                                                    <td align="center">
+                                                        <a id="HyperLink1" class="link_text1" href="http://listing.bseindia.com/download/HelpManual.zip">User Manual</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a id="HyperLink2" class="link_text1" href="helpdesk.aspx?id=511200">Help Desk</a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                              
+                                        </td>
+                                 </tr>
+                                 
+                                
+                    </table>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <table width="939" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td height="20"></td>
+                        </tr>
+                        <tr id="NoteMarque">
+	<td height="10" align="right" bgcolor="#d8e9eb" class="body_text3">
+                                
+                        </tr>
+                         <tr id="note6">
+		<td height="10" align="center" bgcolor="#d8e9eb" class="body_text3">
+                                
+
+                            </td>
+	</tr>
+	
+
+			    <tr id="note7">
+		<td height="10" align="center" bgcolor="#d8e9eb" class="body_text3" style="padding-left:0px;">                               
+                                 <img src="include/images/AnnualDisclosure.gif">
+                            </td>
+	</tr>
+	
+
+                        <tr id="Tr1">
+		<td height="10" align="center" bgcolor="#d8e9eb" class="body_text3" style="padding-left: 0px;">                                 
+                                
+                            </td>
+	</tr>
+	
+                        
+                        <tr>
+                            <td bgcolor="#d8e9eb">
+                                <table width="979" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="200" valign="top">&nbsp;</td>
+                                        <td valign="top">
+                                            <div>
+                                                
+
+
+    <link href="include/css/class.css" rel="stylesheet" />
+    <link href="include/class/CalendarControl.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/CalendarControl.js" type="text/javascript"></script>
+    <link href="include/css/CorporateAnn.css" rel="stylesheet" />
+    <script src="include/js/jquery.min.js" type="text/javascript"></script>
+    <script src="include/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="include/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="include/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <link href="include/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/bootbox.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .modals {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+        }
+
+        .center {
+            z-index: 1000;
+            margin: 300px auto;
+            padding: 10px;
+            width: 130px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+            .center img {
+                height: 128px;
+                width: 128px;
+            }
+    </style>
+
+    <style type="text/css">
+        .iframe-container {
+            padding-bottom: 60%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+            .iframe-container iframe,
+            .iframe-container object,
+            .iframe-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        .modal.in .modal-dialog {
+            transform: none; /*translate(0px, 0px);*/
+        }
+
+        .auto-style8 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            color: #000000;
+            text-decoration: none;
+            width: 193px;
+            padding-left: 10px;
+        }
+
+        p.MsoNormal {
+            margin-bottom: .0001pt;
+            font-size: 11.0pt;
+            font-family: "Calibri",sans-serif;
+            margin-left: 0cm;
+            margin-right: 0cm;
+            margin-top: 0cm;
+        }
+
+        .auto-style9 {
+            width: 238px;
+            height: 13px;
+        }
+
+        .auto-style10 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            color: #000000;
+            text-decoration: none;
+            height: 50px;
+            width: 238px;
+            padding-left: 10px;
+        }
+
+        .auto-style11 {
+            height: 13px;
+        }
+    </style>
+    <script type="text/javascript">
+        function PreviewImage() {
+
+            pdffile = document.getElementById("Fl_Upd_CorpAnns").files[0];
+            //alert("pdffile" + pdffile);
+            pdffile_url = URL.createObjectURL(pdffile);
+            //alert("pdffile_url" + pdffile_url);
+            // pdffile_url = pdffile_url.replace('blob:', '');
+            // alert("pdffile_url" + pdffile_url);
+            $('#viewer').attr('src', pdffile_url);
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //Succ message
+            // add multiple select / deselect functionality
+            $("#selectall").click(function () {
+                if ($(this).is(':checked')) {
+                    $('.case').prop('checked', true);
+                }
+                else {
+                    $('.case').prop('checked', false);
+                }
+            });
+
+
+            $(function () {
+                $('#btnSelectScript').click(function () {
+                    //var val = [];
+                    var ValScripSelcect = '';
+                    var txtScript;
+                    $(':checkbox:checked').each(function (i) {
+                        //  val[i] = $(this).val();  
+                        if (i == 0) {
+                            ValScripSelcect = $(this).val();
+                        }
+                        else {
+                            ValScripSelcect = ValScripSelcect + "," + $(this).val();
+                        }
+                    });
+                    txtScript = ValScripSelcect.replace('on,', '');
+                    $('#txtSelectedScript').text(txtScript);
+                    return false;
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        //Jquery check how much char entered
+
+        function StopEnter() {
+            if (event.keyCode === 13)
+                event.preventDefault();
+        }
+
+        function ShowFileExtension() {
+            bootbox.alert({
+                title: "Corporate Announcements",
+                message: "Please Upload File and Only formats are allowed :PDF",
+
+            });
+            return false;
+        }
+
+        function OTPFailure() {
+            bootbox.alert({
+                title: "Corporate Announcements",
+                message: "OTP Verfication Failed,Please Resubmit Announcement",
+
+            });
+            return false;
+        }
+
+        function OTPRegMandate() {
+            bootbox.alert({
+                title: "Corporate Announcements",
+                message: "Please Register Details for OTP using Company Registration Screen",
+
+            });
+            return false;
+        }
+
+        $(document).ready(function () {
+
+            $('#txtBody').keyup(updateCount);
+            $('#txtBody').keydown(updateCount);
+            function updateCount() {
+                var cs = $(this).val().length;
+                $('#characters').text(cs + " /1000");
+                if (cs == 1000) {
+                    return false;
+                }
+            }
+
+
+            //when the user selects unaudited, they shall not be allowed to select Audit Report
+            $("#chk_Form_STD_AuditorReView").click(function () {
+                if ($('input[id=chk_TypesofResult_QTR_U]:checked').length > 0) {
+                    alert("For unaudited type selection audit report submission is restricted.");
+                    return false;
+                }
+
+            });
+
+            //whenever the user selects Type Audited the user should only be able to select report as Audit Report
+            $("#chk_Form_STD_LimReView").click(function () {
+                if ($('input[id=chk_TypesofResult_QTR_A]:checked').length > 0) {
+                    alert("For audited type selection only audit report submission is allowed.");
+                    return false;
+                }
+            });
+
+
+
+            $("#chk_TypesofResult_QTR_A").click(function () {
+                $('#chk_Form_STD_AuditorReView').prop('checked', false);
+                $('#chk_Form_STD_LimReView').prop('checked', false);
+            });
+
+            $("#chk_TypesofResult_QTR_U").click(function () {
+                $('#chk_Form_STD_AuditorReView').prop('checked', false);
+                $('#chk_Form_STD_LimReView').prop('checked', false);
+            });
+
+
+        });
+
+        function showAlert(a, b) {
+            if (b == "1") {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Data Saved as Draft ,Anncouncement id for Refrence is " + a,
+
+                });
+            }
+            else {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Data Saved Sucessfully,Anncouncement id for Refrence is " + a,
+
+                });
+            }
+        }
+        function ValidateFile() {
+            if ($("#ddlCategory").val() == 'Select' || $("#ddlDescription").val() == 'Select' || $("#ddlAnnType").val() == 'Select' || $("#ddlSubject").val() == 'Select') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please select Category or Description or Announcement Type or Subject",
+
+                });
+                return false;
+            }
+            var Filextensio = $("#Fl_Upd_CorpAnns").val().toUpperCase();
+            var fileExtension = ['pdf'];
+            if ($("#Fl_Upd_CorpAnns").val().length > 0) {
+                if ($.inArray($("#Fl_Upd_CorpAnns").val().split('.').pop().toLowerCase(), fileExtension) < 0) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Upload File and Only formats are allowed : " + fileExtension.join(', '),
+
+                    });
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+            else {
+                return true;
+            }
+        }
+
+        function ShowOTPScreen() {
+            $('#btnShowPopup').click();
+            RefreshforMobileOTPContent();
+            return false;
+        }
+
+
+        function ShowPdfPreview() {
+            PreviewImage();
+            $('#btnShowPopPDF').click();
+
+        }
+
+        function ShowInvalidFileExtension() {
+            bootbox.alert({
+                title: "Corporate Announcement",
+                message: "Please Select Proper Format Of Files.",
+            });
+            return false;
+        }
+
+
+        function ShowMachineReadableMessage() {
+            bootbox.alert({
+                title: "Corporate Announcement",
+                //message: "Document uploaded by you is not machine readable. For details, please refer Exchange Circular <a href='https://www.bseindia.com/corporates/Displaydata.aspx?Id=51a626d8-c10e-42a2-bfa3-ab28119ecb8f&Page=cir'  target='_blank'>LIST/COMP/22/2017-18 dated January 16, 2018.</a> For generating machine readable PDF refer this  <a href='../include/samplefiles/CAFS_MACHINE_REDABLE_DOCUMENTS.docx'  target='_blank'> User Manual</a>",
+                message: "Document uploaded by you is not machine readable. For details, please refer Exchange Circular <a href='https://www.bseindia.com/corporates/Displaydata.aspx?Id=35043bbf-99e2-4fee-b037-eec498d3ad10&Page=cir'  target='_blank'>LIST/COMP/01/2018-19  dated April 03, 2018.</a> For generating machine readable PDF we suggest that you may consider referring to the attached document that would be of use.  <a href='../include/samplefiles/CAFS_MACHINE_REDABLE_DOCUMENTS.docx'  target='_blank'> User Manual</a>",
+            });
+            return false;
+        }
+        function RefreshforMobileOTPContent() {
+            //   $('#divMobileResendOTP').html('60');
+            $('#divMobileResendOTP').html('180');
+            var interval = setInterval(function () {
+                var timer = $('#divMobileResendOTP').html();
+                var seconds = parseInt(timer);
+                --seconds;
+                if (seconds == 0) { clearInterval(interval); $("#lnkResendOTPMobile").show(); $('#divMobileResendOTP').hide(); $('#divDisplayOTPMobile').hide(); }
+                $('#divMobileResendOTP').html(seconds);
+            }, 1000);
+        }
+
+
+        (function (a) { a.createModal = function (b) { defaults = { title: "", message: "Your Message Goes Here!", closeButton: true, scrollable: false }; var b = a.extend({}, defaults, b); var c = (b.scrollable === true) ? 'style="max-height: 420px;overflow-y: auto;"' : ""; html = '<div class="modal fade" id="myModal">'; html += '<div class="modal-dialog">'; html += '<div class="modal-content">'; html += '<div class="modal-header">'; html += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'; if (b.title.length > 0) { html += '<h4 class="modal-title">' + b.title + "</h4>" } html += "</div>"; html += '<div class="modal-body" ' + c + ">"; html += b.message; html += "</div>"; html += '<div class="modal-footer">'; if (b.closeButton === true) { html += '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>' } html += "</div>"; html += "</div>"; html += "</div>"; html += "</div>"; a("body").prepend(html); a("#myModal").modal().on("hidden.bs.modal", function () { a(this).remove() }) } })(jQuery);
+
+
+        function readURLFromScr() {
+
+            var reader = new FileReader();
+            // var ScourceFileName = "http://listing.bseindia.com/Corporate_Ann/" + '';   
+            var ScourceFileName = "../Corporate_Ann/" + '';
+            // var ScourceFileName = "http://www.bseindia.com/xml-data/corpfiling/AttachLive/" + '';              
+
+            var iframe = '<div class="iframe-container"><iframe src="' + ScourceFileName + '"></iframe></div>'
+            $.createModal({
+                title: 'My Title',
+                message: iframe,
+                //closeButton: true,
+                scrollable: false
+            });
+
+        }
+
+
+
+
+
+        function ValidateSubmitAnns() {
+            var Filextensio = $("#Fl_Upd_CorpAnns").val().toUpperCase();
+            var fileExtension = ['pdf'];
+
+            if ($('#ddlCategory :selected').val() == 'Select') {
+
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Select Category / Sub Category",
+
+                });
+                return false;
+            }
+            else if ($('#ddlDescription :selected').val() == 'Select') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Select Description",
+
+                });
+                return false;
+            }
+            else if ($('#ddlAnnType :selected').val() == 'Select') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Select Announcement Type",
+
+                });
+                return false;
+            }
+            else if ($("#ddlCategory option:selected").text() == "Results") {
+                if ($('#ddlResultType :selected').val() == 'Select') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Select Results Type",
+
+                    });
+                    return false;
+                }
+                //For redmin 31583
+                //if ($('#ddlResultPeriodicity :selected').val() == 'Select') {
+                //    alert('Please Select Results Periodicity');
+                //    return false;
+                //}
+
+
+                //if ($('#ddlResultPeriodicity :selected').val() == 'Select') {
+                //    alert('Please Select Quarter');
+                //    return false;
+                //}
+
+                if ($('input[name=thename]:checked')) {
+
+                }
+
+                var LrDate = 0;
+                LrDate = $('#txtLRARLetterDate').val();
+                if (LrDate == 0) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please select LR Letter Date",
+
+                    });
+                    return false;
+                }
+                if ($('#ddlQuarterID').val() == 'Select') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please select Quarter",
+
+                    });
+                    return false;
+                }
+
+                else if ($("#Fl_Upd_CorpAnns").val() != "") {
+                    if ($.inArray($("#Fl_Upd_CorpAnns").val().split('.').pop().toLowerCase(), fileExtension) < 0) {
+
+                        bootbox.alert({
+                            title: "Corporate Announcements",
+                            message: "Only formats are allowed : " + fileExtension.join(', '),
+
+                        });
+                        return false;
+                    }
+                }
+                // if ($("#Fl_Upd_CorpAnns").val() == '') {
+                if ($('#lblFile').text() == '') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Upload PDF with Result",
+
+                    });
+                    return false;
+                }
+                if ($("#ddlContactDetails").val() == 'Select') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Select Contact Details for OTP",
+
+                    });
+                    return false;
+                }
+
+
+
+                if ($('#ddlSubject :selected').val() == 'Select' || $("#txtSubject").val().trim().length < 10) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Select / Enter Subject",
+
+                    });
+                    return false;
+                }
+                if ($('#txtBody').val() == '') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Enter Body",
+
+                    });
+                    return false;
+                }
+                /*added code on 09052017 by sandip*/
+                if ($('#txtSubject').is(':visible')) {
+                    if ($("#txtSubject").val().length > 1000) {
+                        bootbox.alert({
+                            title: "Corporate Announcements",
+                            message: "Please Enter Subject length less than 1000 char.",
+
+                        });
+                        return false;
+                    }
+                    if ($('#lblFile').text() == '') {
+                        bootbox.alert({
+                            title: "Corporate Announcements",
+                            message: "Please Upload PDF.",
+
+                        });
+                        return false;
+                    }
+
+                } /*added code on 09052017 by sandip*/
+
+                if ($('#txtBody').val().length > 1000) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Enter body length less than 1000 char.",
+
+                    });
+                    return false;
+                }
+
+            }
+            else if ($('#ddlSubject :selected').val() == 'Select' || $("#txtSubject").val().trim().length < 10) {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Select / Enter Subject",
+
+                });
+                return false;
+            }
+            else if ($('#txtBody').val() == '') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Enter Body",
+
+                });
+                return false;
+            }
+                /*added code on 09052017 by sandip*/
+            else if ($('#txtSubject').is(':visible')) {
+                if ($("#txtSubject").val().length > 1000) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Enter Subject length less than 1000 char.",
+
+                    });
+                    return false;
+                }
+                if ($('#lblFile').text() == '') {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Please Upload PDF.",
+
+                    });
+                    return false;
+                }
+
+            } /*added code on 09052017 by sandip*/
+
+            else if ($('#txtBody').val().length > 1000) {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Enter body length less than 1000 char.",
+
+                });
+                return false;
+            }
+
+            else if ($('#lblFile').text() == '') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Upload PDF.",
+
+                });
+                return false;
+            }
+            else if ($("#ddlContactDetails").val() == 'Select') {
+                bootbox.alert({
+                    title: "Corporate Announcements",
+                    message: "Please Select Contact Details for OTP",
+
+                });
+                return false;
+            }
+            else {
+                // $('#btnShowPopup').click();
+                // return false;
+                //return true;
+            }
+        }
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        //Results related changes
+        $(document).ready(function () {
+            $('#ResultSection1').hide();
+            $('#ResultSection2').hide();
+
+            //if dropdown cat is results then only 
+            if ($("#ddlCategory option:selected").text() == "Results") {
+                $('#ResultSection1').show();
+                //  $('#ResultSection2').show();
+            }
+            else {
+                $('#ResultSection1').hide();
+                // $('#ResultSection2').hide();
+            }
+        });
+    </script>
+      <div>
+      <table width="900" height="100%" cellspacing="1" cellpadding="0" border="0" align="center">
+                <tr>
+                  <td align="left" class="auto-style9"><a href="../include/samplefiles/CAFS_MACHINE_REDABLE_DOCUMENTS.docx" style="color:red;">Machine Readable Conversion Document</a> </td> 
+                  <td   align="right" class="auto-style11"><a class="bluelink" href="View_CorpAnnList.aspx">Track Your Corporate Announcements</a></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td height="30" bgcolor="#4b868f" width="539" class="tabletop_text1" colspan="2" align="center" bgcolor="#4b868f">
+                        <b style="color: white;">Corporate Announcements</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Script Code<span style="color: Red"> *</span></td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <span id="lblScriptCode" class="body_text3">511200</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Name of the Company&nbsp; <span style="color: Red">*</span></td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        
+                        <span id="lblCompName" class="body_text3">MUNOTH CAPITAL MARKET LTD.</span>
+                    </td>
+                </tr>
+                
+
+
+                
+
+
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Category / Sub Category&nbsp; <span style="color: Red">*</span>
+                    </td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <select name="ctl00$ContentPlaceHolder1$ddlCategory" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlCategory\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlCategory" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+		<option value="Select">Select</option>
+		<option value="1">Board Meeting</option>
+		<option value="2">Corporate Action</option>
+		<option value="8">Compliances</option>
+		<option value="4">Announcement under Regulation 30 (LODR)</option>
+		<option selected="selected" value="6">Results</option>
+		<option value="7">Shareholder Meeting / Postal Ballot</option>
+		<option value="9">Corporate Insolvency Resolution Process (CIRP)</option>
+		<option value="10">Closure of Trading Window</option>
+		<option value="11">Outcome of Board Meeting</option>
+
+	</select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Description <span style="color: Red">*</span> </td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <select name="ctl00$ContentPlaceHolder1$ddlDescription" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlDescription\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlDescription" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+		<option selected="selected" value="Financial_Results">Financial_Results</option>
+
+	</select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Announcement Type&nbsp; <span style="color: Red">*</span></td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <select name="ctl00$ContentPlaceHolder1$ddlAnnType" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlAnnType\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlAnnType" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+		<option selected="selected" value="Outcome">Outcome</option>
+
+	</select>
+
+                    </td>
+                </tr>
+
+                <tr id="ResultSection1">
+		<td colspan="2">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 235px; height: 50px" class="body_text3" bgcolor="#ffffff">Results Type&nbsp;<span style="color: Red">*</span></td>
+                                <td class="body_text3" bgcolor="#ffffff">
+                                    <select name="ctl00$ContentPlaceHolder1$ddlResultType" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlResultType\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlResultType" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+			<option value="Select">Select</option>
+			<option selected="selected" value="Rststd">Standalone</option>
+			<option value="Rststdcons">Standalone &amp; Consolidated</option>
+
+		</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Results Periodicity&nbsp;<span style="color: Red">*</span></td>
+                                <td class="body_text3" bgcolor="#ffffff">
+                                    <select name="ctl00$ContentPlaceHolder1$ddlResultPeriodicity" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlResultPeriodicity\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlResultPeriodicity" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+			<option value="Select">Select</option>
+			<option value="PeriodQtr">Quarterly</option>
+			<option value="PeriodHlf">Half Yearly</option>
+			<option selected="selected" value="PeriodYrl">Yearly</option>
+
+		</select>
+                                </td>
+                            </tr>
+                             <tr class="auto-style8" bgcolor="#ffffff">
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Type&nbsp; <span style="color: Red">*</span> </td>
+                                 <td class="body_text3" bgcolor="#ffffff">
+                                     
+                                      
+                                      <input id="chk_TypesofResult_QTR_A" type="radio" name="ctl00$ContentPlaceHolder1$TypesofResultSTD_QTR" value="chk_TypesofResult_QTR_A" /><label for="chk_TypesofResult_QTR_A">Audited</label>
+                                      <input id="chk_TypesofResult_QTR_U" type="radio" name="ctl00$ContentPlaceHolder1$TypesofResultSTD_QTR" value="chk_TypesofResult_QTR_U" /><label for="chk_TypesofResult_QTR_U">Unaudited</label>
+                                 
+
+                                 </td>
+                             </tr>
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Quarter&nbsp;<span style="color: Red"> *</span></td>
+                                <td class="body_text3" bgcolor="#ffffff">
+                                    <select name="ctl00$ContentPlaceHolder1$ddlQuarterID" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlQuarterID\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlQuarterID" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+			<option value="Select">Select</option>
+			<option value="99">September 2018</option>
+			<option value="98">June 2018</option>
+			<option selected="selected" value="97">March 2018</option>
+			<option value="96">December 2017</option>
+			<option value="95">September 2017</option>
+			<option value="94">June 2017</option>
+			<option value="93">March 2017</option>
+			<option value="92">December 2016</option>
+			<option value="91">September 2016</option>
+			<option value="90">June 2016</option>
+			<option value="89">March 2016</option>
+			<option value="88">December 2015</option>
+			<option value="87">September 2015</option>
+			<option value="86">June 2015</option>
+			<option value="85">March 2015</option>
+			<option value="84">December 2014</option>
+			<option value="83">September 2014</option>
+			<option value="82">June 2014</option>
+			<option value="81">March 2014</option>
+			<option value="80">December 2013</option>
+			<option value="79">September 2013</option>
+			<option value="78">June 2013</option>
+			<option value="77">March 2013</option>
+			<option value="76">December 2012</option>
+			<option value="75">September 2012</option>
+			<option value="74">June 2012</option>
+			<option value="73">March 2012</option>
+			<option value="72">December 2011</option>
+			<option value="71">September 2011</option>
+			<option value="70">June 2011</option>
+			<option value="69">March 2011</option>
+			<option value="68">December 2010</option>
+			<option value="67">September 2010</option>
+			<option value="66">June 2010</option>
+			<option value="65">March 2010</option>
+			<option value="64">December 2009</option>
+			<option value="63">September 2009</option>
+			<option value="62">June 2009</option>
+			<option value="61">March 2009</option>
+			<option value="60">December 2008</option>
+			<option value="59">September 2008</option>
+			<option value="58">June 2008</option>
+			<option value="57">March 2008</option>
+			<option value="56">December 2007</option>
+			<option value="55">September 2007</option>
+			<option value="54">June 2007</option>
+			<option value="53">March 2007</option>
+			<option value="52">December 2006</option>
+			<option value="51">September 2006</option>
+			<option value="50">June 2006</option>
+			<option value="0">Odd</option>
+
+		</select>
+                                </td>
+                            </tr>
+                            <tr id="trStmtonAssLia">
+			<td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Statement on Assets / Liabilities    </td>
+			<td class="body_text3" bgcolor="#ffffff">
+                                    <input id="rdbstmtofassetYes" type="radio" name="ctl00$ContentPlaceHolder1$stmtAsserLib" value="rdbstmtofassetYes" checked="checked" /><label for="rdbstmtofassetYes">Yes</label>
+                                    <input id="rdbstmtofassetNo" type="radio" name="ctl00$ContentPlaceHolder1$stmtAsserLib" value="rdbstmtofassetNo" /><label for="rdbstmtofassetNo">No</label>
+
+                                </td>
+		</tr>
+		
+
+                            <tr id="trfrmstd">
+			<td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Form (Standalone)  </td>
+			<td class="body_text3" bgcolor="#ffffff">
+                                    
+                                    <input id="chk_Form_Std_FORM_A" type="radio" name="ctl00$ContentPlaceHolder1$formStd" value="chk_Form_Std_FORM_A" checked="checked" /><label for="chk_Form_Std_FORM_A">Declaration</label>
+                                    <input id="chk_Form_Std_FORM_B" type="radio" name="ctl00$ContentPlaceHolder1$formStd" value="chk_Form_Std_FORM_B" /><label for="chk_Form_Std_FORM_B">Statement on Impact of Audit Qualifications</label>
+
+                                </td>
+		</tr>
+		
+                            <tr id="trfrmcons">
+			<td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Form (Consolidated)   </td>
+			<td class="body_text3" bgcolor="#ffffff">
+                                    
+                                    <input id="chk_Form_Con_FORM_A" type="radio" name="ctl00$ContentPlaceHolder1$consStd" value="chk_Form_Con_FORM_A" /><label for="chk_Form_Con_FORM_A">Declaration</label>
+                                    <input id="chk_Form_Con_FORM_B" type="radio" name="ctl00$ContentPlaceHolder1$consStd" value="chk_Form_Con_FORM_B" /><label for="chk_Form_Con_FORM_B">Statement on Impact of Audit Qualifications</label>
+
+                                </td>
+		</tr>
+		
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Report </td>
+                                <td class="body_text3" bgcolor="#ffffff">
+                                    
+                                     <input id="chk_Form_STD_AuditorReView" type="radio" name="ctl00$ContentPlaceHolder1$std_LimitedORAuditorReview" value="chk_Form_STD_AuditorReView" checked="checked" /><label for="chk_Form_STD_AuditorReView">Audit Report</label>
+                                    <input id="chk_Form_STD_LimReView" type="radio" name="ctl00$ContentPlaceHolder1$std_LimitedORAuditorReview" value="chk_Form_STD_LimReView" /><label for="chk_Form_STD_LimReView">Limited Review Report</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Limited Review Report /  Audit Report Date&nbsp; </td>
+                                <td bgcolor="#ffffff" class="body_text3" style="text-align: left;">
+                                    <input name="ctl00$ContentPlaceHolder1$txtLRARLetterDate" type="text" value="30/05/2018" id="txtLRARLetterDate" class="DateTm" onkeyup="clearText(event,&#39;txtLRARLetterDate&#39;)" onkeypress="return false;" onpaste="return false;" onclick="showCalendarControl(&#39;txtLRARLetterDate&#39;, &#39;Div2&#39;,false);" style="height:22px;width:128px;" />
+                                    <img src="../include/images/cal.png" id="img2" style="cursor: hand" onclick="showCalendarControl('txtLRARLetterDate', 'Div2',false)"
+                                        align="middle" alt="Calendar" />
+                                    <div id="Div2"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Ind - As Applicability</td>
+                                <td bgcolor="#ffffff" class="body_text3" style="text-align: left;">
+                                    <input id="rdbGivenAsperIndAS_YES" type="radio" name="ctl00$ContentPlaceHolder1$GivenAsperIndAS" value="rdbGivenAsperIndAS_YES" checked="checked" /><label for="rdbGivenAsperIndAS_YES">Yes</label>
+                                    <input id="rdbGivenAsperIndAS_NO" type="radio" name="ctl00$ContentPlaceHolder1$GivenAsperIndAS" value="rdbGivenAsperIndAS_NO" /><label for="rdbGivenAsperIndAS_NO">No</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Reconciliation Table (Ind-As requirement) 
+                                </td>
+                                <td bgcolor="#ffffff" class="body_text3" style="text-align: left;">
+                                    <input id="rdbGivenTblReco_YES" type="radio" name="ctl00$ContentPlaceHolder1$GivenTblReco" value="rdbGivenTblReco_YES" checked="checked" /><label for="rdbGivenTblReco_YES">Yes</label>
+                                    <input id="rdbGivenTblReco_NO" type="radio" name="ctl00$ContentPlaceHolder1$GivenTblReco" value="rdbGivenTblReco_NO" /><label for="rdbGivenTblReco_NO">No</label>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Result Press Release  </td>
+                                <td bgcolor="#ffffff" class="body_text3" style="text-align: left;">
+                                    <input id="chkResultPressReleaseYES" type="radio" name="ctl00$ContentPlaceHolder1$chkResultPressRelease" value="chkResultPressReleaseYES" checked="checked" /><label for="chkResultPressReleaseYES">Yes</label>
+                                    <input id="chkResultPressReleaseNO" type="radio" name="ctl00$ContentPlaceHolder1$chkResultPressRelease" value="chkResultPressReleaseNO" /><label for="chkResultPressReleaseNO">No</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 176px; height: 50px" class="body_text3" bgcolor="#ffffff">Result Presentation  
+                                </td>
+                                <td bgcolor="#ffffff" class="body_text3" style="text-align: left;">
+                                    <input id="chkResultPresentationYES" type="radio" name="ctl00$ContentPlaceHolder1$chkResultPresentation" value="chkResultPresentationYES" /><label for="chkResultPresentationYES">Yes</label>
+                                    <input id="chkResultPresentationNO" type="radio" name="ctl00$ContentPlaceHolder1$chkResultPresentation" value="chkResultPresentationNO" checked="checked" /><label for="chkResultPresentationNO">No</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+	</tr>
+	
+
+
+
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Subject&nbsp;<span style="color: Red">*</span> </td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <br />
+                        <br />
+                        <textarea name="ctl00$ContentPlaceHolder1$txtSubject" rows="2" cols="20" id="txtSubject" title="Spell Check Enabled ,Please Correct highlighted spelling" class="form-control" alt="hi" style="height:99px;width:472px;">
+Audited Financial Results For March 31, 2018</textarea>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style10" bgcolor="#ffffff">Body&nbsp; <span style="color: Red">*</span></td>
+                    <td class="auto-style2" bgcolor="#ffffff">
+                        <br />
+                        <textarea name="ctl00$ContentPlaceHolder1$txtBody" rows="2" cols="20" readonly="readonly" id="txtBody" title="Spell Check Enabled ,Please Correct highlighted spelling" class="form-control" style="height:196px;width:472px;">
+Audited Financial Results for March 31, 2018</textarea>
+
+
+                        <span id="characters"><span>
+                            <br /></td>
+
+
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">File Upload <b>(Only PDF File)&nbsp; </b><span style="color: Red">*</span></td>
+                    <td class="body_text3" bgcolor="#ffffff" style="height: 80px;">
+                        <span>
+                            <br />
+                            <input type="file" name="ctl00$ContentPlaceHolder1$Fl_Upd_CorpAnns" id="Fl_Upd_CorpAnns" disabled="disabled" class="aspNetDisabled" style="width:216px;color: white" /></span>
+                        
+
+                        <span>(All documents to be scanned and uploaded in a single pdf file)</span>
+                        <a id="lnkFileDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lnkFileDownload&#39;,&#39;&#39;)"><img src='../include/images/download.gif'></a>
+                        &nbsp;<br />
+                        <span style="font-weight: bold">PDF File Name :- </span>
+                        <span id="lblFile" bgcolor="#ffffff" class="body_text3s">70a7f4e7-c288-4db4-a069-b503333e7ea3.pdf</span><br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" bgcolor="#ffffff">Contact For OTP&nbsp; <span style="color: Red"><span style="color: Red">*</span>&nbsp; </span></td>
+                    <td class="body_text3" bgcolor="#ffffff">
+                        <select name="ctl00$ContentPlaceHolder1$ddlContactDetails" id="ddlContactDetails" class="btn btn-default_CorpBoardMeeting" style="width: 500px;">
+
+	</select><span style="color: Red">*</span></td>
+                </tr>
+            </table>
+
+            <table width="700" cellspacing="1" cellpadding="0" border="0" align="center" style="align-content: center">
+                <tr id="Tr1">
+		<td align="center" colspan="2">
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$Btn_SubmitCorpAnn" value="Submit" id="Btn_SubmitCorpAnn" disabled="disabled" class="aspNetDisabled" class="btn btn-primary" style="width:96px;" />
+                    </td>
+		<td align="left" style="padding-left: 5px;"></td>
+	</tr>
+	
+                <tr>
+                    <br />
+                    <td colspan="2">
+                        <img src="include/images/note1.gif"></td>
+                </tr>
+                 
+            </table>
+        </div>
+
+        
+
+        <button id="btnShowPopup" type="button" data-toggle="modal" data-target="#PopOTP" class="btn btn-success" style="display: none;">
+        </button>
+
+        <div id="PopOTP" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="H1" style="color: #3D3D3D;">Enter OTP</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input name="ctl00$ContentPlaceHolder1$txtOTPMobile" type="text" maxlength="4" id="txtOTPMobile" class="form-control" placeholder="Please Enter OTP" onkeypress="return StopEnter(event);" style="margin-top: 15px; width: 88%" />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$btnValiadateMobileOTP" value="Submit" id="btnValiadateMobileOTP" class="btn btn-primary" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center;">
+                                <div><span id="divDisplayOTPMobile" style="color: #4B868F">OTP will resend</span> <span style="color: #ff0000" id="divMobileResendOTP"></span></div>
+                                <div align="center">
+                                    <a id="lnkResendOTPMobile" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lnkResendOTPMobile&#39;,&#39;&#39;)" style="display: none;">Resend OTP</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <button id="btnShowPopPDF" type="button" data-toggle="modal" data-target="#PopPDF" class="btn btn-success" style="display: none;">
+        </button>
+        <div id="PopPDF" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-sg" role="document" style="width: 900px;">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <iframe id="viewer" frameborder="0" scrolling="no" width="100%" height="500"></iframe> 
+                                                      
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-md-12" align="center">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$FileSubmitpreview" value="Approve Preview" id="FileSubmitpreview" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='ajax_loader' class="modals" style="display: none">
+            <div class="center">
+                <img src="../include/images/loader1.gif"></img>
+            </div>
+        </div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#PopPDF").modal({
+                show: false,
+                backdrop: 'static'
+            });
+
+
+        });
+
+        (function (a) { a.createModal = function (b) { defaults = { title: "", message: "Your Message Goes Here!", closeButton: true, scrollable: false }; var b = a.extend({}, defaults, b); var c = (b.scrollable === true) ? 'style="max-height: 420px;overflow-y: auto;"' : ""; html = '<div class="modal fade" id="myModal">'; html += '<div class="modal-dialog">'; html += '<div class="modal-content">'; html += '<div class="modal-header">'; html += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'; if (b.title.length > 0) { html += '<h4 class="modal-title">' + b.title + "</h4>" } html += "</div>"; html += '<div class="modal-body" ' + c + ">"; html += b.message; html += "</div>"; html += '<div class="modal-footer">'; if (b.closeButton === true) { html += '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>' } html += "</div>"; html += "</div>"; html += "</div>"; html += "</div>"; a("body").prepend(html); a("#myModal").modal().on("hidden.bs.modal", function () { a(this).remove() }) } })(jQuery);
+        $(function () {
+            function readURL(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+
+                        var test = e.target.result;
+                        var iframe = '<object type="application/pdf" data="' + test + '" width="100%" height="500">No Support</object>'
+                        alert(test)
+                        var iframe = '<object type="application/pdf" ><embed data="' + test + '" type="application/pdf" width="100%" height="100%"></object>'
+                        $.createModal({
+                            title: 'View Uploaded Documents',
+                            message: iframe,
+                            // closeButton: true,
+                            scrollable: false
+                        });
+                        return false;
+
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#Fl_Upd_CorpAnns").change(function () {
+
+                var fileExtension = ['pdf'];
+                if ($.inArray($("#Fl_Upd_CorpAnns").val().split('.').pop().toLowerCase(), fileExtension) < 0) {
+                    bootbox.alert({
+                        title: "Corporate Announcements",
+                        message: "Only formats are allowed :- " + fileExtension.join(', '),
+                    });
+                    $("#Fl_Upd_CorpAnns").val('');
+                    return false;
+                } else {
+                    ShowPdfPreview();
+                    // $('#FileSubmitpreview').click();
+
+                    return true;
+                }
+
+            });
+
+
+        });
+</script>
+
+
+                                            </div>
+                                        </td>
+                                        <td width="200" valign="top">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" bgcolor="#d8e9eb">&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+</tr>
+
+            <tr>
+                <td valign="top">
+                    <table width="979" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td bgcolor="#d8e9eb"></td>
+                        </tr>
+                        <tr>
+                            <td height="30" bgcolor="#295358" class="footer_text1">© 2012 BSE. All rights reserved </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <img src="include/images/trans.gif" width="10" height="10" hspace="0" vspace="0" border="0" /></td>
+            </tr>
+        </table>
+<div style="display: none">
+        <button type="button" data-toggle="modal" data-target="#divGSTDisclaimer" id="btnGSTDesclaimer"
+            class="btn btn-success" style="display: none;">
+            Verify</button>
+    </div>
+
+
+     
+    <div id="divGSTDisclaimerNew" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h4 class="modal-title" style="color: #4b868f">DECLARATION REGARDING NON-REGISTRATION UNDER CGST/ SGST/ IGST</h4>
+
+                </div>
+                <div class="modal-bodyGST">
+                    DateTime:
+                    <span id="lblDate"></span>
+                    <br /><br />
+                    To,
+                     <br />
+                        BSE Limited
+                        
+                    
+                    <br /><br />
+                    Sub: No registration obtained under the GST law<br /><br />
+                    Dear Sir/Madam,
+                    <br />
+                    
+                    With reference to the above subject, we would like to state & submit as under:
+                    <br />
+                    1.	In this regard, we hereby declare and affirm that we have not obtained registration with the GST Authorities. Accordingly, we shall not be entitled to claim any input tax credit on the invoices issued by your company for the goods / services supplied / to be supplied to us. 
+                    <br />
+                    2.	We also understand that it shall be our responsibility to intimate your goodself in future, as and when we obtain registration with the GST Authorities, and we also agree that any change shall be given effect prospectively & not retrospectively, i.e., we shall not request for amendments to invoices issued by you prior to our obtaining registration for incorporating our GST details on the said invoices. 
+                    <br />
+                    3. We also understand that quoting of any false information in this declaration shall render me/us liable for all applicable legal and penal consequences, for which I/we shall be solely responsible.
+                    <br />
+                    We request BSE Limited to treat this communication as a declaration regarding non-requirement to be registered under the Act.
+                    <br />
+                    <br />
+
+                    Thanks & Regards,<br />
+                    <span id="Name"></span>
+                    <br />
+                    <br />
+                    <br />
+                    Name of the Authorised signatory
+
+                </div>
+                <div class="modal-footernew" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 14px;color: #333;">
+                    <input id="chkTermsNew" type="checkbox" name="ctl00$chkTermsNew" />&nbsp;&nbsp;I accept the above declaration&nbsp;&nbsp;
+                    <button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="modal" onclick="RedirectNew();">Click Here for GST Registeration</button>
+                    <br />
+                    
+                </div>
+                <div id="OTPDetails" class="modal-footernew" style=" font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif; font-size: 14px;color: #333; display:none">
+                    Please Select Contact  Details for OTP : <select name="ctl00$ddlContactDetails" id="ddlContactDetails" class="form-control" style="width: 250px; display:inline">
+
+</select>
+                </div>
+		<div id="DivPAN" class="modal-footernew" style=" font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif; font-size: 14px;color: #333; display:none">
+                    Please Enter PAN No. : <input name="ctl00$txtPAN" type="text" maxlength="10" id="txtPAN" class="input-sm" style="text-transform:uppercase ;width: 290px; display:inline" /><span id="lblError" style="color:Red;"></span>
+                </div>
+                <div id="DivSubmitNew" class="modal-footernew" style="font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif; font-size: 14px;color: #333; display:none">
+                    
+                    <div class="text-center">
+                    <input type="submit" name="ctl00$btnSubmitNew" value="Submit" onclick="javascript:return ValidatePANMaster();" id="btnSubmitNew" class=" btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+    
+
+        <button id="btnShowPopupNew" type="button" data-toggle="modal" data-target="#ctl00_PopOTPNew" class="btn btn-success" style="display: none;">
+        </button>
+
+        <div id="PopOTPNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog  modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        
+                        <h4 class="modal-title" id="H1" style="color: #3D3D3D;">Enter OTP</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input name="ctl00$txtOTPMobileNew" type="text" maxlength="4" id="txtOTPMobileNew" class="form-control" placeholder="Please Enter OTP" style="margin-top: 15px; width: 88%" />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                <input type="submit" name="ctl00$btnValiadateMobileOTPNew" value="Submit" id="btnValiadateMobileOTPNew" class="btn btn-primary" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center;">
+                                <div><span id="divDisplayOTPMobileNew" style="color: #4B868F">OTP will resend</span> <span style="color: #ff0000" id="divMobileResendOTPNew"></span></div>
+                                <div align="center">
+                                    <a id="lnkResendOTPMobileNew" href="javascript:__doPostBack(&#39;ctl00$lnkResendOTPMobileNew&#39;,&#39;&#39;)" style="display: none;">Resend OTP</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </form>
+</body>
+</html>

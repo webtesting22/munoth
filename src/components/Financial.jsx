@@ -46,12 +46,89 @@ const Financial = () => {
     quarterlyReports: {
       shareholding: [
         {
-          date: "20 Oct, 2018",
+          date: "30 Sep, 2018",
           title: "Share holding pattern for quarter ending 30th September 2018",
-          size: "441.64 KB",
-          link: "/downloads/share-holding-pattern-for-quarter-ending-30th-september-2018.pdf"
+          size: "442 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th September 2018.pdf"
         },
-        // Add more shareholding reports here...
+        {
+          date: "30 Jun, 2018",
+          title: "Share holding pattern for quarter ending 30th June 2018",
+          size: "442 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th June 2018.pdf"
+        },
+        {
+          date: "31 Mar, 2018",
+          title: "Share holding pattern for quarter ending 31st March 2018",
+          size: "440 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st March 2018.pdf"
+        },
+        {
+          date: "31 Dec, 2017",
+          title: "Share holding pattern for quarter ending 31st December 2017",
+          size: "436 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st December 2017.pdf"
+        },
+        {
+          date: "30 Sep, 2017",
+          title: "Share holding pattern for quarter ending 30th September 2017",
+          size: "436 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 3oth September 2017.pdf"
+        },
+        {
+          date: "30 Jun, 2017",
+          title: "Share holding pattern for quarter ending 30th June 2017",
+          size: "438 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th June 2017.pdf"
+        },
+        {
+          date: "31 Mar, 2017",
+          title: "Share holding pattern for quarter ending 31st March 2017",
+          size: "438 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st March 2017.pdf"
+        },
+        {
+          date: "31 Dec, 2016",
+          title: "Share holding pattern for quarter ending 31st December 2016",
+          size: "438 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st December 2016.pdf"
+        },
+        {
+          date: "30 Sep, 2016",
+          title: "Share holding pattern for quarter ending 30th September 2016",
+          size: "483 KB",
+          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th Sep 2016.pdf"
+        },
+        {
+          date: "30 Jun, 2016",
+          title: "Share holding pattern for quarter ending 30th June 2016",
+          size: "189 KB",
+          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th June 2016.pdf"
+        },
+        {
+          date: "31 Mar, 2016",
+          title: "Shareholding Pattern for the Quarter ended on 31st March 2016",
+          size: "183 KB",
+          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 31st Mar 2016.pdf"
+        },
+        {
+          date: "31 Dec, 2015",
+          title: "Shareholding Pattern for the Quarter ended on 31st December 2015",
+          size: "144 KB",
+          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 31st Dec 2015.pdf"
+        },
+        {
+          date: "30 Sep, 2015",
+          title: "Shareholding Pattern for the Quarter ended on 30th September 2015",
+          size: "212 KB",
+          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th Sept 2015.pdf"
+        },
+        {
+          date: "30 Jun, 2015",
+          title: "Shareholding Pattern for the Quarter ended on 30th June 2015",
+          size: "207 KB",
+          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th June 2015.pdf"
+        }
       ],
       financial: [
         {
@@ -82,7 +159,30 @@ const Financial = () => {
           size: "1.98 MB",
           link: "/downloads/Audited Financial Results for year ending 2018-19.zip"
         },
-        // Add more audited results here...
+        {
+          date: "31 Mar, 2018",
+          title: "Audited Financial Results for year ending 2017-18",
+          size: "81 KB",
+          link: "/documents/AuditedFinancialResults/Audited Financial Results for year ending 2017-18.pdf"
+        },
+        {
+          date: "31 Mar, 2017",
+          title: "Audited Financial Results for year ending 2016-17",
+          size: "81 KB",
+          link: "/documents/AuditedFinancialResults/Audited Financial Results for year ending 2016-17.pdf"
+        },
+        {
+          date: "31 Mar, 2016",
+          title: "Audited Financial Results for the year ending 2015-16",
+          size: "252 KB",
+          link: "/documents/AuditedFinancialResults/Audited Financial Results for the year ending 2015-16.pdf"
+        },
+        {
+          date: "31 Mar, 2015",
+          title: "Audited Financial Results for year ending 2014-15",
+          size: "298 KB",
+          link: "/documents/AuditedFinancialResults/Audited Financial Results for year ending 2014-15.pdf"
+        }
       ],
       reports: [
         {
