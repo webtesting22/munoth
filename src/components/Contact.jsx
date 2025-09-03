@@ -80,14 +80,16 @@ const Contact = () => {
                   <h4>Compliance Officer</h4>
                   <p>
                     <b>Siddharth S. Jain</b> <br />
-                                          <div>
-                        <FiPhone style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-                         <a href="tel:079-26937954">079-26937954</a><br />
-                      </div>
-                      <div>
-                        <FiMail style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-                   <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
-                      </div>
+                    <div className='MobileFlex'>
+                    <div>
+                      <FiPhone style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                      <a href="tel:079-26937954">079-26937954</a><br />
+                    </div>
+                    <div>
+                      <FiMail style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                      <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
+                    </div>
+                    </div>
                   </p>
                 </div>
                 <div className="block">
