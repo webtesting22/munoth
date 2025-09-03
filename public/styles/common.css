@@ -1600,4 +1600,7 @@ section {
     .down-arrow{
         display: none ;
     }
+    #register-block {
+        margin-top: 0px !important;
+    }
 }
