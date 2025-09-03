@@ -1596,11 +1596,21 @@ section {
     .FirstContainer {
         margin-bottom: 20px !important;
         gap: 10px;
+        flex-direction: column;
+        width: 100% !important;
     }
-    .down-arrow{
-        display: none ;
+
+    .down-arrow {
+        display: none;
     }
+
     #register-block {
         margin-top: 0px !important;
+    }
+
+    .FlexUl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

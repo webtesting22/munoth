@@ -66,7 +66,7 @@ const Contact = () => {
                 Near Karnavati Club<br />
                 S G Road, Ahmedabad - 380058
               </p>
-              <ul>
+              <ul className='FlexUl'>
                 <li className="number"><a href="tel:9033003188">+91 9033003188</a></li>
                 <li className="email">
                   <a href="mailto:info@munoth.com">info@munoth.com</a>
