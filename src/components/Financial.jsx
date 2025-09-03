@@ -278,16 +278,16 @@ const Financial = () => {
           {/* Quarterly Reports */}
           <div className="block-inner">
             <h2>Quarterly Reports</h2>
-            
+
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['shareholding'] ? 'active' : ''}`}
                 id="accord11"
                 onClick={() => toggleAccordion('shareholding')}
               >
                 Shareholding Pattern<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['shareholding'] ? 'block' : 'none' }}
               >
@@ -298,14 +298,14 @@ const Financial = () => {
             </div>
 
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['financial'] ? 'active' : ''}`}
                 id="accord12"
                 onClick={() => toggleAccordion('financial')}
               >
                 Financial Results<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['financial'] ? 'block' : 'none' }}
               >
@@ -319,16 +319,16 @@ const Financial = () => {
           {/* Annual Results */}
           <div className="block-inner">
             <h2>Annual Results</h2>
-            
+
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['audited'] ? 'active' : ''}`}
                 id="accord21"
                 onClick={() => toggleAccordion('audited')}
               >
                 Audited Financial Results<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['audited'] ? 'block' : 'none' }}
               >
@@ -339,14 +339,14 @@ const Financial = () => {
             </div>
 
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['reports'] ? 'active' : ''}`}
                 id="accord22"
                 onClick={() => toggleAccordion('reports')}
               >
                 Annual Reports<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['reports'] ? 'block' : 'none' }}
               >
@@ -360,16 +360,16 @@ const Financial = () => {
           {/* Announcements */}
           <div className="block-inner">
             <h2>Announcements</h2>
-            
+
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['announcements2024'] ? 'active' : ''}`}
                 id="accord31"
                 onClick={() => toggleAccordion('announcements2024')}
               >
                 2024<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['announcements2024'] ? 'block' : 'none' }}
               >
@@ -383,16 +383,16 @@ const Financial = () => {
           {/* Documents and Others */}
           <div className="block-inner">
             <h2>Documents and Others</h2>
-            
+
             <div className="accordion-outer">
-              <div 
+              <div
                 className={`accordion ${openAccordions['policies'] ? 'active' : ''}`}
                 id="accord41"
                 onClick={() => toggleAccordion('policies')}
               >
                 Policies<span></span>
               </div>
-              <div 
+              <div
                 className="container"
                 style={{ display: openAccordions['policies'] ? 'block' : 'none' }}
               >

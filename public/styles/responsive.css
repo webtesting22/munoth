@@ -623,7 +623,7 @@
 	}
 
 	#contact-block .width {
-		width: 95%;
+		width: 98%;
 	}
 
 	.contact-info .block-left {
@@ -925,12 +925,13 @@
 		position: relative;
 		width: 95%;
 		padding: 2.5%;
+		height: 100% !important;
 		/* display: none; */
 	}
 
 	#banner .title h2 {
 		font-size: 18px;
-		line-height: 35px;
+		line-height: 45px;
 	}
 
 	#banner .title p {

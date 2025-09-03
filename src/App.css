@@ -264,3 +264,11 @@ section {
   z-index: 1000;
 }
 
+
+
+@media (max-width:767px) {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
