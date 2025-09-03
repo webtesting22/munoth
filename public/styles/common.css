@@ -1595,7 +1595,7 @@ section {
 
     .FirstContainer {
         margin-bottom: 20px !important;
-        gap: 30px;
+        gap: 12px;
     }
     .down-arrow{
         display: none ;

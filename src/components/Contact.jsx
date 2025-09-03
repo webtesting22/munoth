@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { FiPhone, FiMail } from 'react-icons/fi'
+
 const Contact = () => {
   const [contactData, setContactData] = useState({
     name: '',
@@ -77,9 +79,15 @@ const Contact = () => {
                 <div className="block">
                   <h4>Compliance Officer</h4>
                   <p>
-                    <b>Siddharth S. Jain</b><br />
-                    Phone: <a href="tel:079-26937954">079-26937954</a><br />
-                    Email: <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
+                    <b>Siddharth S. Jain</b> <br />
+                                          <div>
+                        <FiPhone style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                         <a href="tel:079-26937954">079-26937954</a><br />
+                      </div>
+                      <div>
+                        <FiMail style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                   <a href="mailto:sjain@munoth.com">sjain@munoth.com</a>
+                      </div>
                   </p>
                 </div>
                 <div className="block">
