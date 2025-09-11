@@ -18,7 +18,7 @@ const Services = () => {
 
   const services = [
     {
-      title: "Equity Broking Desk.",
+      title: "Equity Broking Desk",
       image: "/images/advise-based-banner.jpg",
       description: <>We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research. <br />
         {/* <b>Advise Based Broking Desk</b> */}
