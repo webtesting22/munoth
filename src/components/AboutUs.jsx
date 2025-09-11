@@ -44,7 +44,7 @@ const AboutUs = () => {
             {/* <p>He is the founder of the Munoth Group that comprises of private and public limited companies. Originally in Import business, the group has expanded to Financial Markets, Real Estate, Ware Housing, Leasing and Construction. Active in business since an early age of 17 years, his strategic guidance has helper the group in year on year progress. Many charities and philanthropic activities are credited to his name. He is also a proud recipient of "Glory of Gujarat" award by hands of the Governor of Gujarat.</p> */}
           </div>
           <div className="col-12 col-lg-6">
-            <img src="/images/siddharth_jain.jpg" className="img-fluid" alt="Siddharth Jain" />
+            <img src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/SiddharthJainMunoth.jpeg" className="img-fluid" alt="Siddharth Jain" />
             <div className="Social-header">
             <h3>Siddharth Jain<br /><small><i>Managing Director</i></small></h3>
             <div className="social-icons">
