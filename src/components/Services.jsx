@@ -35,20 +35,22 @@ const Services = () => {
     {
       title: "Hedge Fund",
       image: "/images/hedge-fund-banner.jpg",
-      description: "By definition, A Hedge Fund or Alternative Investment Fund is a financial vehicle that pools capital from a number of investors and invests it in securities and other instruments. It is administered by a professional management firm, and often structured as a limited partnership or a limited liability company or a similar business model. In India, Hedge Fund investment was legalized in 2012 as Sebi Registered Alternative Investment Fund Category III.",
+      description: "Munoth Hedge Fund is a SEBI-registered Alternative Investment Fund (Category III) that pools capital from investors and allocates it across listed equities and related instruments. Unlike traditional investment vehicles, it relies on the discipline and judgment of its fund managers rather than fixed market trends. The Fund employs a range of strategies designed to manage risk and pursue opportunities across market cycles.",
       extraContent: (
         <>
-          <p>Contrary to traditional investments, Hedge Funds depend on the skills, foresight and sheer acumen of your Hedge Fund Manager rather than the performance of the market or the asset class. Therefore, Hedge Funds can provide opportunities to manage risk as well as diversify in both bull and bear markets.</p>
+          <p>Our operations are supported by an institutional framework to ensure compliance and governance. HDFC Bank acts as Fund Accountant and Custodian, Labadiya & Mehta as Statutory Auditor, MNSS & Associates as Tax Advisor, Desai & Diwanji as Legal Counsel, KFin Technologies as RTA, and Vistra ITCL as Trustee. Munoth Capital Market Ltd. serves as the Investment Manager.</p>
+          {/* <p>Contrary to traditional investments, Hedge Funds depend on the skills, foresight and sheer acumen of your Hedge Fund Manager rather than the performance of the market or the asset class. Therefore, Hedge Funds can provide opportunities to manage risk as well as diversify in both bull and bear markets.</p>
           <p>While most misconceive Hedge Funds to be a high risk, we consider them as investments without boundaries, and rightly so, because the possibilities and margins of returns. As your Hedge Fund managers, we employ a diverse and constantly evolving range of trading strategies to generate better returns. We provide investors with greater control and independence as well as enhanced transparency and liquidity matched to their underlying investments. We have made significant investment in technology and infrastructure to ensure we have the right insights to make informed investments of the funds you have entrusted us with. Our flexible investment platform allows us to work closely work with you to good ends.</p>
           <h3>Munoth Alternative Investment Fund Highlights:</h3>
-          <h4>SEBI Registered Alternative Investment Fund Company (Under Category 3)</h4>
-          <ul>
+          <h4>SEBI Registered Alternative Investment Fund Company (Under Category 3)</h4> */}
+          {/* <br /> */}
+          {/* <ul>
             <li>Fund Advisor- KPMG</li>
             <li>Custodian of Funds –HDFC Bank</li>
             <li>Legal Advisors – IC Legal, Mumbai</li>
             <li>Fund Sponsor – Chairman, Munoth Capital</li>
             <li>Settler – Siddharth Jain</li>
-          </ul>
+          </ul> */}
         </>
       )
     },
