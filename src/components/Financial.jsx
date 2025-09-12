@@ -46,108 +46,210 @@ const Financial = () => {
     quarterlyReports: {
       shareholding: [
         {
+          date: "31 Mar, 2018",
+          title: "Share holding pattern for quarter ending 31st March 2018",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 31st March 2018.pdf"
+        },
+        {
           date: "30 Sep, 2018",
           title: "Share holding pattern for quarter ending 30th September 2018",
-          size: "442 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th September 2018.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 30th September 2018.pdf"
         },
         {
           date: "30 Jun, 2018",
           title: "Share holding pattern for quarter ending 30th June 2018",
-          size: "442 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th June 2018.pdf"
-        },
-        {
-          date: "31 Mar, 2018",
-          title: "Share holding pattern for quarter ending 31st March 2018",
-          size: "440 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st March 2018.pdf"
-        },
-        {
-          date: "31 Dec, 2017",
-          title: "Share holding pattern for quarter ending 31st December 2017",
-          size: "436 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st December 2017.pdf"
-        },
-        {
-          date: "30 Sep, 2017",
-          title: "Share holding pattern for quarter ending 30th September 2017",
-          size: "436 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 3oth September 2017.pdf"
-        },
-        {
-          date: "30 Jun, 2017",
-          title: "Share holding pattern for quarter ending 30th June 2017",
-          size: "438 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th June 2017.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 30th June 2018.pdf"
         },
         {
           date: "31 Mar, 2017",
           title: "Share holding pattern for quarter ending 31st March 2017",
-          size: "438 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st March 2017.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 31st March 2017.pdf"
+        },
+        {
+          date: "30 Sep, 2017",
+          title: "Share holding pattern for quarter ending 3oth September 2017",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 3oth September 2017.pdf"
+        },
+        {
+          date: "30 Jun, 2017",
+          title: "Share holding pattern for quarter ending 30th June 2017",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 30th June 2017.pdf"
+        },
+        {
+          date: "31 Dec, 2017",
+          title: "Share holding pattern for quarter ending 31st December 2017",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 31st December 2017.pdf"
         },
         {
           date: "31 Dec, 2016",
           title: "Share holding pattern for quarter ending 31st December 2016",
-          size: "438 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 31st December 2016.pdf"
-        },
-        {
-          date: "30 Sep, 2016",
-          title: "Share holding pattern for quarter ending 30th September 2016",
-          size: "483 KB",
-          link: "/documents/ShareHoldingPattern/Share holding pattern for quarter ending 30th Sep 2016.pdf"
-        },
-        {
-          date: "30 Jun, 2016",
-          title: "Share holding pattern for quarter ending 30th June 2016",
-          size: "189 KB",
-          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th June 2016.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Share holding pattern for quarter ending 31st December 2016.pdf"
         },
         {
           date: "31 Mar, 2016",
-          title: "Shareholding Pattern for the Quarter ended on 31st March 2016",
-          size: "183 KB",
-          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 31st Mar 2016.pdf"
+          title: "Shareholding Pattern for the Quarter ended on 31st Mar 2016",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 31st Mar 2016.pdf"
+        },
+        {
+          date: "30 Sep, 2016",
+          title: "Shareholding Pattern for the Quarter ended on 30th Sep 2016",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 30th Sep 2016.pdf"
+        },
+        {
+          date: "30 Jun, 2016",
+          title: "Shareholding Pattern for the Quarter ended on 30th June 2016",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 30th June 2016.pdf"
         },
         {
           date: "31 Dec, 2015",
-          title: "Shareholding Pattern for the Quarter ended on 31st December 2015",
-          size: "144 KB",
-          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 31st Dec 2015.pdf"
+          title: "Shareholding Pattern for the Quarter ended on 31st Dec 2015",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 31st Dec 2015.pdf"
         },
         {
           date: "30 Sep, 2015",
-          title: "Shareholding Pattern for the Quarter ended on 30th September 2015",
-          size: "212 KB",
-          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th Sept 2015.pdf"
+          title: "Shareholding Pattern for the Quarter ended on 30th Sept 2015",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 30th Sept 2015.pdf"
         },
         {
           date: "30 Jun, 2015",
           title: "Shareholding Pattern for the Quarter ended on 30th June 2015",
-          size: "207 KB",
-          link: "/documents/ShareHoldingPattern/Shareholding Pattern for the Quarter ended on 30th June 2015.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/Shareholding Pattern/Shareholding Pattern for the Quarter ended on 30th June 2015.pdf"
         }
       ],
       financial: [
         {
-          date: "12 Feb, 2022",
+          date: "2021-22",
           title: "Unaudited Financial results for Q3 of 2021-22",
-          size: "267.54 KB",
-          link: "/documents/unaudited-financial-results-q3-2021-22.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2021-22.pdf"
         },
         {
-          date: "13 Nov, 2021",
+          date: "2021-22",
           title: "Unaudited Financial results for Q2 of 2021-22",
-          size: "285.23 KB",
-          link: "/documents/unaudited-financial-results-q2-2021-22.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2021-22.pdf"
         },
         {
-          date: "14 Aug, 2021",
+          date: "2021-22",
           title: "Unaudited Financial results for Q1 of 2021-22",
-          size: "203.23 KB",
-          link: "/documents/unaudited-financial-results-q1-2021-22.pdf"
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2021-22.pdf"
+        },
+        {
+          date: "2020-21",
+          title: "Audited Financial results for Q4 of 2020-21",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Audited Financial results for Q4 of 2020-21.pdf"
+        },
+        {
+          date: "2020-21",
+          title: "Unaudited Financial results for Q3 of 2020-21",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2020-21.PDF"
+        },
+        {
+          date: "2020-21",
+          title: "Unaudited Financial results for Q2 of 2020-21",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2020-21 .PDF"
+        },
+        {
+          date: "2020-21",
+          title: "Unaudited Financial results for Q1 of 2020-21",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2020-21 .pdf"
+        },
+        {
+          date: "2019-20",
+          title: "Unaudited Financial Results for Q3 of 2019-20",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Results for Q3 of 2019-20.pdf"
+        },
+        {
+          date: "2019-20",
+          title: "Unaudited Financial Results for Q2 of 2019-20",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Results for Q2 of 2019-20.pdf"
+        },
+        {
+          date: "2019-20",
+          title: "Unaudited Financial results for Q1 of 2019-20",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2019-20.pdf"
+        },
+        {
+          date: "2018-19",
+          title: "Unaudited Financial results for Q3 of 2018-19",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2018-19.pdf"
+        },
+        {
+          date: "2018-19",
+          title: "Unaudited Financial results for Q2 of 2018-19",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2018-19.pdf"
+        },
+        {
+          date: "2018-19",
+          title: "Unaudited Financial results for Q1 of 2018-19",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2018-19.pdf"
+        },
+        {
+          date: "2017-18",
+          title: "Unaudited Financial results for Q3 of 2017-18",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2017-18.pdf"
+        },
+        {
+          date: "2017-18",
+          title: "Unaudited Financial results for Q2 of 2017-18",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2017-18.pdf"
+        },
+        {
+          date: "2016-17",
+          title: "Unaudited Financial results for Q2 of 2016-17",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited financial results for Q2 of 2016-17.pdf"
+        },
+        {
+          date: "2016-17",
+          title: "Unaudited financial results for Q1 of 2016-17",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited financial results for Q1 of 2016-17.pdf"
+        },
+        {
+          date: "2015-16",
+          title: "Unaudited Financial Result for Q3 of 2015-16",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q3 of 2015-16.pdf"
+        },
+        {
+          date: "2015-16",
+          title: "Unaudited Financial Result for Q2 of 2015-16",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q2 of 2015-16.pdf"
+        },
+        {
+          date: "2015-16",
+          title: "Unaudited Financial Result for Q1 of 2015-16",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q1 of 2015-16.pdf"
         }
       ]
     },
@@ -208,37 +310,223 @@ const Financial = () => {
     announcements: {
       2024: [
         {
-          date: "06 Jan, 2024",
+          date: "2024",
           title: "Notice of EGM_ Munoth Capital",
           size: "1.19 MB",
-          link: "/documents/notice-egm-munoth-capital.pdf"
+          link: "/documents/Announcement/2024/Notice of EGM_ Munoth Capital .pdf"
         },
         {
-          date: "06 Jan, 2024",
+          date: "2024",
           title: "Valuation Report",
           size: "1.67 MB",
-          link: "/documents/valuation-report.pdf"
+          link: "/documents/Announcement/2024/Valuation Report.pdf"
+        }
+      ],
+      2020: [
+        {
+          date: "2020",
+          title: "Notice for AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2020/Notice for AGM.pdf"
+        }
+      ],
+      2019: [
+        {
+          date: "2019",
+          title: "Public Notice_Physical Share transfer_English News paper",
+          size: "N/A",
+          link: "/documents/Announcement/2019/Public Notice_Physical Share transfer_English News paper.pdf"
+        },
+        {
+          date: "2019",
+          title: "Public Notice_Physical Share transfer_News paper",
+          size: "N/A",
+          link: "/documents/Announcement/2019/Public Notice_Physical Share transfer_News paper.pdf"
+        }
+      ],
+      2018: [
+        {
+          date: "2018",
+          title: "Board meeting intimation to consider audited results for year ending March 2018",
+          size: "N/A",
+          link: "/documents/Announcement/2018/Board meeting intimation to consider audited results for year ending March 2018.pdf"
+        },
+        {
+          date: "2018",
+          title: "Board meeting intimation to consider results of Q1 ending June 2018",
+          size: "N/A",
+          link: "/documents/Announcement/2018/Board meeting intimation to consider results of Q1 ending June 2018.pdf"
+        },
+        {
+          date: "2018",
+          title: "Board meeting intimation to consider results of Q2 ending September 2018",
+          size: "N/A",
+          link: "/documents/Announcement/2018/Board meeting intimation to consider results of Q2 ending September 2018.pdf"
+        },
+        {
+          date: "2018",
+          title: "Board meeting intimation to consider results of Q3 ending December 2017",
+          size: "N/A",
+          link: "/documents/Announcement/2018/Board meeting intimation to consider results of Q3 ending December 2017.pdf"
+        },
+        {
+          date: "2018",
+          title: "Outcome of AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2018/Outcome of AGM.pdf"
+        }
+      ],
+      2017: [
+        {
+          date: "2017",
+          title: "Board meeting intimation to consider results of Q2 ending September 2017",
+          size: "N/A",
+          link: "/documents/Announcement/2017/Board meeting intimation to consider results of Q2 ending September 2017.pdf"
+        },
+        {
+          date: "2017",
+          title: "Intimation of EGM",
+          size: "N/A",
+          link: "/documents/Announcement/2017/Intimation of EGM.pdf"
+        },
+        {
+          date: "2017",
+          title: "Notice of AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2017/Notice of AGM.pdf"
+        },
+        {
+          date: "2017",
+          title: "Outcome of AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2017/Outcome of AGM.pdf"
+        },
+        {
+          date: "2017",
+          title: "Summary of the AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2017/Summary of the AGM.PDF"
+        }
+      ],
+      2016: [
+        {
+          date: "2016",
+          title: "Board Meeting to consider audited Financial results for Q4 ending 31st March 2016",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Board Meeting to consider audited Financial results for Q4 ending 31st March 2016 .pdf"
+        },
+        {
+          date: "2016",
+          title: "Board Meeting to consider unaudited Financial results for Q1 ending 30th June 2016",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Board Meeting to consider unaudited Financial results for Q1 ending 30th June 2016.pdf .pdf"
+        },
+        {
+          date: "2016",
+          title: "Board Meeting to consider unaudited Financial results for Q2 ending 30th Sep 2016",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Board Meeting to consider unaudited Financial results for Q2 ending 30th Sep 2016 .pdf"
+        },
+        {
+          date: "2016",
+          title: "Board meeting to consider unaudited financial results for Q3 ending 30th Dec 2015",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Board meeting to consider unaudited financial results for Q3 ending 30th Dec 2015.docx .pdf"
+        },
+        {
+          date: "2016",
+          title: "Notice for Annual General Meeting",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Notice for Annual General Meeting.pdf"
+        },
+        {
+          date: "2016",
+          title: "Proceedings of AGM",
+          size: "N/A",
+          link: "/documents/Announcement/2016/Proceedings of AGM.pdf"
+        }
+      ],
+      2015: [
+        {
+          date: "2015",
+          title: "Board meeting to consider unaudited financial results for Q1 ending 30th June 2015",
+          size: "N/A",
+          link: "/documents/Announcement/2015/Board meeting to consider unaudited financial results for Q1 ending 30th June 2015.pdf"
+        },
+        {
+          date: "2015",
+          title: "Board meeting to consider unaudited financial results for Q2 ending 30th Sep 2015",
+          size: "N/A",
+          link: "/documents/Announcement/2015/Board meeting to consider unaudited financial results for Q2 ending 30th Sep 2015.pdf"
         }
       ]
     },
     policies: [
       {
-        date: "13 Mar, 2023",
-        title: "Archiving of Documents",
-        size: "206.60 KB",
-        link: "/documents/archiving-documents.pdf"
+        date: "2024",
+        title: "Vigil Mechanism Policy",
+        size: "367 KB",
+        link: "/documents/DocumentAndOthers/Vigil Mechanism Policy.pdf"
       },
       {
-        date: "13 Mar, 2023",
-        title: "Risk Management Policy",
-        size: "345.55 KB",
-        link: "/documents/risk-management-policy.pdf"
+        date: "2024",
+        title: "Related Party Policy",
+        size: "658 KB",
+        link: "/documents/DocumentAndOthers/Related Party Policy.pdf"
       },
       {
-        date: "13 Mar, 2023",
+        date: "2024",
+        title: "Policy on Remuneration",
+        size: "351 KB",
+        link: "/documents/DocumentAndOthers/Policy on Remuneration.pdf"
+      },
+      {
+        date: "2024",
+        title: "Policy on Familiarisation of Independent Directors",
+        size: "311 KB",
+        link: "/documents/DocumentAndOthers/Policy on Familiarisation of Independent Directors.pdf"
+      },
+      {
+        date: "2024",
         title: "Nomination and Remuneration Policy",
-        size: "318.33 KB",
-        link: "/documents/nomination-remuneration-policy.pdf"
+        size: "318 KB",
+        link: "/documents/DocumentAndOthers/Nomination and Remuneration Policy.pdf"
+      },
+      {
+        date: "2024",
+        title: "Materiality on Subsidiaries",
+        size: "420 KB",
+        link: "/documents/DocumentAndOthers/Materiality on Subsidiaries.pdf"
+      },
+      {
+        date: "2024",
+        title: "Investors Grievances",
+        size: "408 KB",
+        link: "/documents/DocumentAndOthers/Investors Grievances.pdf"
+      },
+      {
+        date: "2024",
+        title: "Dividend Distribution Policy",
+        size: "320 KB",
+        link: "/documents/DocumentAndOthers/Dividend Distribution Policy.pdf"
+      },
+      {
+        date: "2024",
+        title: "Director and Senior Personnel Appointment Policies",
+        size: "320 KB",
+        link: "/documents/DocumentAndOthers/Director and Senior Personnel Appointment Policies .pdf"
+      },
+      {
+        date: "2024",
+        title: "Code of Practices and Procedures for Fair Disclosure",
+        size: "489 KB",
+        link: "/documents/DocumentAndOthers/Code of Practices and Procedures for Fair Disclosure.pdf"
+      },
+      {
+        date: "2024",
+        title: "Code of Conduct for Board of Directors and Senior Management",
+        size: "332 KB",
+        link: "/documents/DocumentAndOthers/Code of Conduct for Board of Directors and Senior Management.pdf"
       }
     ]
   }
@@ -361,6 +649,7 @@ const Financial = () => {
           <div className="block-inner">
             <h2>Announcements</h2>
 
+            {/* 2024 Announcements */}
             <div className="accordion-outer">
               <div
                 className={`accordion ${openAccordions['announcements2024'] ? 'active' : ''}`}
@@ -374,6 +663,120 @@ const Financial = () => {
                 style={{ display: openAccordions['announcements2024'] ? 'block' : 'none' }}
               >
                 {downloadData.announcements[2024].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2020 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2020'] ? 'active' : ''}`}
+                id="accord32"
+                onClick={() => toggleAccordion('announcements2020')}
+              >
+                2020<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2020'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2020].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2019 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2019'] ? 'active' : ''}`}
+                id="accord33"
+                onClick={() => toggleAccordion('announcements2019')}
+              >
+                2019<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2019'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2019].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2018 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2018'] ? 'active' : ''}`}
+                id="accord34"
+                onClick={() => toggleAccordion('announcements2018')}
+              >
+                2018<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2018'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2018].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2017 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2017'] ? 'active' : ''}`}
+                id="accord35"
+                onClick={() => toggleAccordion('announcements2017')}
+              >
+                2017<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2017'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2017].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2016 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2016'] ? 'active' : ''}`}
+                id="accord36"
+                onClick={() => toggleAccordion('announcements2016')}
+              >
+                2016<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2016'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2016].map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            {/* 2015 Announcements */}
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['announcements2015'] ? 'active' : ''}`}
+                id="accord37"
+                onClick={() => toggleAccordion('announcements2015')}
+              >
+                2015<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['announcements2015'] ? 'block' : 'none' }}
+              >
+                {downloadData.announcements[2015].map((item, index) => (
                   <DownloadItem key={index} item={item} />
                 ))}
               </div>
