@@ -383,6 +383,128 @@ const Financial = () => {
           size: "N/A",
           link: "/documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q1 of 2015-16.pdf"
         }
+      ],
+      newspaperAdvertisements: [
+        {
+          date: "30 Jun, 2025",
+          title: "Newspaper Advertisement - June 2025",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_June 2025.pdf"
+        },
+        {
+          date: "Notice 2024-25",
+          title: "Newspaper Advertisement - Notice 2024-25 AGM",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Notice 2024-25 AGM.pdf"
+        },
+        {
+          date: "31 Dec, 2024",
+          title: "Newspaper Advertisement - Dec 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Dec 2024.pdf"
+        },
+        {
+          date: "30 Sep, 2024",
+          title: "Newspaper Advertisement - Sept 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_sept 2024.pdf"
+        },
+        {
+          date: "31 Mar, 2024",
+          title: "Newspaper Advertisement - March 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_March 2024.pdf"
+        },
+        {
+          date: "30 Jun, 2024",
+          title: "Newspaper Advertisement - June 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_June 2024.pdf"
+        },
+        {
+          date: "31 Dec, 2023",
+          title: "Newspaper Advertisement - Dec 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Dec 2023.pdf"
+        },
+        {
+          date: "30 Sep, 2023",
+          title: "Newspaper Advertisement - Sept 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_sept 2023.pdf"
+        },
+        {
+          date: "31 Mar, 2023",
+          title: "Newspaper Advertisement - March 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_March 2023.pdf"
+        },
+        {
+          date: "30 Jun, 2023",
+          title: "Newspaper Advertisement - June 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_June 2023.pdf"
+        },
+        {
+          date: "Notice 2023-24",
+          title: "Newspaper Advertisement - Notice 2023-24 AGM",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Notice 2023-24 AGM.pdf"
+        },
+        {
+          date: "31 Dec, 2022",
+          title: "Newspaper Advertisement - Dec 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Dec 2022.pdf"
+        },
+        {
+          date: "30 Sep, 2022",
+          title: "Newspaper Advertisement - Sept 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_sept 2022.pdf"
+        },
+        {
+          date: "30 Jun, 2022",
+          title: "Newspaper Advertisement - June 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_June 2022.pdf"
+        },
+        {
+          date: "31 Mar, 2022",
+          title: "Newspaper Advertisement - March 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_March 2022.pdf"
+        },
+        {
+          date: "Notice 2022-23",
+          title: "Newspaper Advertisement - Notice 2022-23 AGM",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Notice 2022-23 AGM.pdf"
+        },
+        {
+          date: "31 Mar, 2021",
+          title: "Newspaper Advertisement - March 2021",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_March 2021.pdf"
+        },
+        {
+          date: "Notice 2021-22",
+          title: "Newspaper Advertisement - Notice 2021-22 AGM",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Notice 2021-22 AGM.pdf"
+        },
+        {
+          date: "N/A",
+          title: "Newspaper Advertisement - Physical Transfer",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Physical Transfer.pdf"
+        },
+        {
+          date: "N/A",
+          title: "Newspaper Advertisement - EGM",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/NewsPaperAdvitisement/Newspaper Advertisement_Notice EGM.pdf"
+        }
       ]
     },
     annualResults: {
@@ -778,6 +900,24 @@ const Financial = () => {
                 style={{ display: openAccordions['financial'] ? 'block' : 'none' }}
               >
                 {downloadData.quarterlyReports.financial.map((item, index) => (
+                  <DownloadItem key={index} item={item} />
+                ))}
+              </div>
+            </div>
+
+            <div className="accordion-outer">
+              <div
+                className={`accordion ${openAccordions['newspaperAdvertisements'] ? 'active' : ''}`}
+                id="accord13"
+                onClick={() => toggleAccordion('newspaperAdvertisements')}
+              >
+                Newspaper Advertisement<span></span>
+              </div>
+              <div
+                className="container"
+                style={{ display: openAccordions['newspaperAdvertisements'] ? 'block' : 'none' }}
+              >
+                {downloadData.quarterlyReports.newspaperAdvertisements.map((item, index) => (
                   <DownloadItem key={index} item={item} />
                 ))}
               </div>
