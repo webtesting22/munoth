@@ -46,6 +46,54 @@ const Financial = () => {
     quarterlyReports: {
       shareholding: [
         {
+          date: "31 Dec, 2024",
+          title: "Shareholding Pattern for quarter ending 31st December 2024",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP_Dec 2024.pdf"
+        },
+        {
+          date: "30 Sep, 2024",
+          title: "Shareholding Pattern for quarter ending 30th September 2024",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP_Sept 2024.pdf"
+        },
+        {
+          date: "30 Jun, 2024",
+          title: "Shareholding Pattern for quarter ending 30th June 2024",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__June 2024.pdf"
+        },
+        {
+          date: "31 Mar, 2024",
+          title: "Shareholding Pattern for quarter ending 31st March 2024",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__March 2024.pdf"
+        },
+        {
+          date: "31 Dec, 2023",
+          title: "Shareholding Pattern for quarter ending 31st December 2023",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__Dec 2023.pdf"
+        },
+        {
+          date: "30 Sep, 2023",
+          title: "Shareholding Pattern for quarter ending 30th September 2023",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__Sept 2023.pdf"
+        },
+        {
+          date: "30 Jun, 2023",
+          title: "Shareholding Pattern for quarter ending 30th June 2023",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__June 2023.pdf"
+        },
+        {
+          date: "31 Mar, 2023",
+          title: "Shareholding Pattern for quarter ending 31st March 2023",
+          size: "N/A",
+          link: "/documents/ShareHoldingPattern/SHP__March 2023.pdf"
+        },
+        {
           date: "31 Mar, 2018",
           title: "Share holding pattern for quarter ending 31st March 2018",
           size: "N/A",
@@ -131,6 +179,90 @@ const Financial = () => {
         }
       ],
       financial: [
+        {
+          date: "2025-26",
+          title: "Financial Results for quarter ended 30th June 2025",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Results_30.06.2025.pdf"
+        },
+        {
+          date: "2024-25",
+          title: "Financial Results for quarter ended 31st March 2025",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.03.2025.pdf"
+        },
+        {
+          date: "2024-25",
+          title: "Financial Results for quarter ended 31st December 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.12.2024.pdf"
+        },
+        {
+          date: "2024-25",
+          title: "Financial Results for quarter ended 30th September 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_30.09.2024.pdf"
+        },
+        {
+          date: "2024-25",
+          title: "Financial Results for quarter ended 30th June 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_30.06.2024.pdf"
+        },
+        {
+          date: "2023-24",
+          title: "Financial Results for quarter ended 31st March 2024",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.03.2024.pdf"
+        },
+        {
+          date: "2023-24",
+          title: "Financial Results for quarter ended 31st December 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.12.2023.pdf"
+        },
+        {
+          date: "2023-24",
+          title: "Financial Results for quarter ended 30th September 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_30.09.2023.pdf"
+        },
+        {
+          date: "2023-24",
+          title: "Financial Results for quarter ended 30th June 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_30.06.2023.pdf"
+        },
+        {
+          date: "2022-23",
+          title: "Financial Results for quarter ended 31st March 2023",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.03.2023.pdf"
+        },
+        {
+          date: "2022-23",
+          title: "Financial Results for quarter ended 31st December 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.12.2022.pdf"
+        },
+        {
+          date: "2022-23",
+          title: "Financial Results for quarter ended 30th September 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_30.09.2022.pdf"
+        },
+        {
+          date: "2022-23",
+          title: "Financial Results for quarter ended 30th June 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result _30.06.2022.pdf"
+        },
+        {
+          date: "2021-22",
+          title: "Financial Results for quarter ended 31st March 2022",
+          size: "N/A",
+          link: "/documents/QuarterlyReports/FinancialResults/Financial Result_31.03.2022.pdf"
+        },
         {
           date: "2021-22",
           title: "Unaudited Financial results for Q3 of 2021-22",
@@ -462,6 +594,54 @@ const Financial = () => {
       ]
     },
     policies: [
+      {
+        date: "2025",
+        title: "Dividend Distribution Policy (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/25. Dividend Distribution Policy_Act.docx"
+      },
+      {
+        date: "2025",
+        title: "Contact details for Investor Grievances (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/10. Contact details for Investor Grievances_Act.docx"
+      },
+      {
+        date: "2025",
+        title: "Related Party Policy (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/7. Related Party Policy_Act.doc"
+      },
+      {
+        date: "2025",
+        title: "Criteria for making payment to NEDs (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/6. Criteria for making payment to NEDs_ACT.docx"
+      },
+      {
+        date: "2025",
+        title: "Whistle Blower Policy (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/5. Whistle Blower Policy_ACT.docx"
+      },
+      {
+        date: "2025",
+        title: "Code of Conduct for Board of Directors and Senior Management (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/4. Code of Conduct for Board of Directors and Senior Management_Act.docx"
+      },
+      {
+        date: "2025",
+        title: "Composition of Committees (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/3. Composition of Committees_Act.docx"
+      },
+      {
+        date: "2025",
+        title: "Terms and Conditions of Appointment of Independent Directors (Act)",
+        size: "N/A",
+        link: "/documents/DocumentAndOthers/2. Terms and Conditions of Appointment of Independent Directors_Act.docx"
+      },
       {
         date: "2024",
         title: "Vigil Mechanism Policy",

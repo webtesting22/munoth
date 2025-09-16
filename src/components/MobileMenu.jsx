@@ -36,11 +36,16 @@ const MobileMenu = () => {
     <div id="mobileMenu">
       {/* Mobile Menu Button */}
       <div className="slicknav_menu">
-        <a 
-          href="#" 
-          aria-haspopup="true" 
-          role="button" 
-          tabIndex="0" 
+        <div className="small-logo">
+          <a href="#banner" onClick={(e) => handleNavClick(e, 'banner')}>
+            <img src="/images/logo.png" alt="" />
+          </a>
+        </div>
+        <a
+          href="#"
+          aria-haspopup="true"
+          role="button"
+          tabIndex="0"
           className="slicknav_btn slicknav_collapsed"
           onClick={toggleMenu}
         >
@@ -51,9 +56,9 @@ const MobileMenu = () => {
             <span className="slicknav_icon-bar"></span>
           </span>
         </a>
-        
+
         {/* Mobile Navigation */}
-        <nav 
+        <nav
           className={`slicknav_nav ${isOpen ? 'slicknav_open' : 'slicknav_hidden'}`}
           style={{ display: isOpen ? 'block' : 'none' }}
           aria-hidden={!isOpen}
@@ -61,9 +66,9 @@ const MobileMenu = () => {
         >
           <ul>
             <li>
-              <a 
-                href="#about-us" 
-                role="menuitem" 
+              <a
+                href="#about-us"
+                role="menuitem"
                 tabIndex={isOpen ? "0" : "-1"}
                 onClick={(e) => handleNavClick(e, 'about-us')}
               >
@@ -71,9 +76,9 @@ const MobileMenu = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#service" 
-                role="menuitem" 
+              <a
+                href="#service"
+                role="menuitem"
                 tabIndex={isOpen ? "0" : "-1"}
                 onClick={(e) => handleNavClick(e, 'service')}
               >
@@ -81,9 +86,9 @@ const MobileMenu = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#financial" 
-                role="menuitem" 
+              <a
+                href="#financial"
+                role="menuitem"
                 tabIndex={isOpen ? "0" : "-1"}
                 onClick={(e) => handleNavClick(e, 'financial')}
               >
@@ -91,9 +96,9 @@ const MobileMenu = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#client-login" 
-                role="menuitem" 
+              <a
+                href="#client-login"
+                role="menuitem"
                 tabIndex={isOpen ? "0" : "-1"}
                 onClick={(e) => handleNavClick(e, 'client-login')}
               >
@@ -101,9 +106,9 @@ const MobileMenu = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#contact" 
-                role="menuitem" 
+              <a
+                href="#contact"
+                role="menuitem"
                 tabIndex={isOpen ? "0" : "-1"}
                 onClick={(e) => handleNavClick(e, 'contact')}
               >
@@ -122,7 +127,7 @@ const MobileMenu = () => {
         @media screen and (max-width: 767px) {
           .slicknav_menu {
             display: block;
-            margin-top: -30px;
+            margin-top: -38px;
     padding: 10px 20px;
           }
             
