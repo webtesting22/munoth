@@ -542,22 +542,34 @@ const Financial = () => {
       ],
       reports: [
         {
+          date: "2025",
+          title: "Annual Report for 2024-25",
+          size: "N/A",
+          link: "/documents/Annual Results/AnnualReports/Annual_Report_2024-25.pdf"
+        },
+        {
           date: "06 Sep, 2024",
           title: "Annual Report for 2023-24",
           size: "1.19 MB",
-          link: "/documents/annual-report-2023-24.pdf"
+          link: "/documents/Annual Results/AnnualReports/annual-report-2023-24.pdf"
         },
         {
           date: "05 Sep, 2023",
           title: "Annual Report for 2022-23",
           size: "1.78 MB",
-          link: "/documents/annual-report-2022-23.pdf"
+          link: "/documents/Annual Results/AnnualReports/annual-report-2022-23.pdf"
         },
         {
           date: "24 Aug, 2022",
           title: "Annual Report for 2021-22",
           size: "764.14 KB",
-          link: "/documents/annual-report-2021-22.pdf"
+          link: "/documents/Annual Results/AnnualReports/annual-report-2021-22.pdf"
+        },
+        {
+          date: "2021",
+          title: "Annual Report for 2020-21",
+          size: "N/A",
+          link: "/documents/Annual Results/AnnualReports/Annual Report_2020-21.pdf"
         }
       ]
     },
